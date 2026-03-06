@@ -57,7 +57,7 @@ export default function Solucoes() {
             <Link
               to="/diagnostico"
               data-testid="solucoes-cta"
-              className="mt-8 inline-flex items-center gap-2 bg-brand-cta text-[#160907] font-semibold px-8 py-4 rounded-[22px] hover:brightness-110 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.3)]"
+              className="mt-8 inline-flex items-center gap-2 bg-brand-cta text-[#160907] font-semibold px-8 py-4 rounded-full hover:brightness-110 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.3)]"
             >
               Quero diagnóstico <ArrowRight size={18} />
             </Link>
@@ -115,7 +115,7 @@ export default function Solucoes() {
             </p>
             <Link
               to="/diagnostico"
-              className="inline-flex items-center gap-2 bg-brand-cta text-[#160907] font-semibold px-8 py-4 rounded-[22px] hover:brightness-110 transition-all duration-300"
+              className="inline-flex items-center gap-2 bg-brand-cta text-[#160907] font-semibold px-8 py-4 rounded-full hover:brightness-110 transition-all duration-300"
             >
               Quero meu diagnóstico <ArrowRight size={18} />
             </Link>

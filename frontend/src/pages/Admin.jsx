@@ -137,7 +137,7 @@ export default function Admin() {
           <button
             data-testid="admin-login-btn"
             onClick={handleAuth}
-            className="w-full bg-brand-cta text-[#160907] font-semibold py-3 rounded-[22px] hover:brightness-110 transition-all"
+            className="w-full bg-brand-cta text-[#160907] font-semibold py-3 rounded-full hover:brightness-110 transition-all"
           >
             Entrar
           </button>
@@ -204,7 +204,7 @@ export default function Admin() {
                 <button
                   data-testid="new-post-btn"
                   onClick={openNew}
-                  className="inline-flex items-center gap-2 bg-brand-cta text-[#160907] font-semibold px-4 py-2.5 rounded-[22px] hover:brightness-110 transition-all text-sm"
+                  className="inline-flex items-center gap-2 bg-brand-cta text-[#160907] font-semibold px-4 py-2.5 rounded-full hover:brightness-110 transition-all text-sm"
                 >
                   <Plus size={16} /> Novo post
                 </button>
@@ -390,7 +390,7 @@ export default function Admin() {
                     data-testid="save-post-btn"
                     onClick={handleSave}
                     disabled={saving}
-                    className="w-full bg-brand-cta text-[#160907] font-semibold py-3.5 rounded-[22px] hover:brightness-110 transition-all disabled:opacity-60"
+                    className="w-full bg-brand-cta text-[#160907] font-semibold py-3.5 rounded-full hover:brightness-110 transition-all disabled:opacity-60"
                   >
                     {saving ? 'Salvando…' : view === 'new' ? 'Criar post' : 'Salvar alterações'}
                   </button>
