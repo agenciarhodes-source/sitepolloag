@@ -1,0 +1,148 @@
+{
+  "brand_identity": {
+    "name": "pollo.ag",
+    "mission": "B2B Marketing, Sales, and Process Solutions with an AI-first approach.",
+    "tone": "Sophisticated, Executive, High-tech, Warm, Predictable.",
+    "theme": "dark",
+    "colors": {
+      "background": "#160907",
+      "surface_1": "#1E0D0A",
+      "surface_2": "#24110E",
+      "primary": "#A34E1B",
+      "primary_700": "#8C3A11",
+      "primary_800": "#612D16",
+      "cta": "#CA6E23",
+      "cta_text": "#160907",
+      "stroke": "#3A231D",
+      "text": {
+        "primary": "#FAF7F4",
+        "muted": "#E7DED7",
+        "subtle": "#B9ABA4"
+      },
+      "gradient": {
+        "official": "linear-gradient(135deg, #8C3A11 0%, #A34E1B 45%, #CA6E23 100%)",
+        "usage": "Use as signature (header, highlights) only. NEVER as full background for long text."
+      }
+    },
+    "typography": {
+      "font_family": {
+        "headings": "Sora, sans-serif",
+        "body": "Inter, sans-serif"
+      },
+      "scale": {
+        "h1": "text-5xl md:text-6xl font-bold tracking-tight",
+        "h2": "text-3xl md:text-4xl font-semibold tracking-tight",
+        "h3": "text-xl md:text-2xl font-medium",
+        "body": "text-base md:text-lg leading-relaxed text-muted",
+        "small": "text-sm text-subtle"
+      }
+    }
+  },
+  "layout_system": {
+    "spacing": {
+      "base_unit": "8px",
+      "container_padding": "p-6 md:p-12 lg:p-20",
+      "section_gap": "gap-12 md:gap-24",
+      "grid_gap": "gap-8"
+    },
+    "grid_structure": {
+      "desktop": "grid-cols-12",
+      "tablet": "grid-cols-8",
+      "mobile": "grid-cols-4",
+      "bento_mode": "Use 'Tetris' grid logic: mix col-span-full, col-span-6, and col-span-4 for visual interest. Avoid uniform grids."
+    },
+    "container_width": "max-w-7xl mx-auto"
+  },
+  "ui_components": {
+    "buttons": {
+      "primary": "bg-[#CA6E23] text-[#160907] font-semibold rounded-lg px-8 py-4 hover:brightness-110 transition-all duration-300 shadow-[0_0_20px_rgba(202,110,35,0.3)]",
+      "secondary": "border border-[#3A231D] bg-transparent text-[#FAF7F4] hover:bg-[#3A231D]/30 transition-all duration-300 rounded-lg px-6 py-3",
+      "ghost": "text-[#CA6E23] hover:text-[#A34E1B] transition-colors"
+    },
+    "cards": {
+      "style": "bg-[#1E0D0A]/80 backdrop-blur-md border border-[#3A231D] rounded-xl hover:border-[#CA6E23]/50 transition-colors duration-300",
+      "padding": "p-8",
+      "shadow": "shadow-lg shadow-black/20"
+    },
+    "inputs": {
+      "style": "bg-[#0F0504] border border-[#3A231D] text-[#FAF7F4] placeholder:text-[#B9ABA4] rounded-md focus:ring-1 focus:ring-[#CA6E23] focus:border-[#CA6E23] transition-all"
+    },
+    "navigation": {
+      "style": "fixed top-0 w-full z-50 bg-[#160907]/80 backdrop-blur-xl border-b border-[#3A231D]",
+      "links": "font-medium text-[#E7DED7] hover:text-[#CA6E23] transition-colors"
+    }
+  },
+  "visual_enhancers": {
+    "glassmorphism": "backdrop-blur-xl bg-white/5 border border-white/10",
+    "gradients": "Use the official gradient for text clips (bg-clip-text text-transparent) on key words or decorative lines.",
+    "borders": "Use 1px borders with low opacity (#3A231D) to define structure without heaviness."
+  },
+  "motion": {
+    "library": "framer-motion",
+    "preferences": {
+      "reduced_motion": "respect-user-settings",
+      "scroll_reveal": "initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: 'easeOut' }}",
+      "stagger": "staggerChildren: 0.1",
+      "parallax": "Use useScroll and useTransform for subtle background movement in Hero and Method sections."
+    }
+  },
+  "images": {
+    "hero_background": {
+      "url": "https://images.unsplash.com/photo-1764258559965-6de87677a260?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "alt": "Abstract flowing light lines on dark background",
+      "usage": "Hero section background with heavy overlay (opacity-80 #160907) to ensure text readability."
+    },
+    "solutions_abstract": {
+      "url": "https://images.unsplash.com/photo-1759956445608-32eef0f19208?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "alt": "Orange abstract lines",
+      "usage": "Background or visual element for Solutions Hub."
+    },
+    "method_graphic": {
+      "url": "https://images.unsplash.com/photo-1755595505158-3dab9919e677?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "alt": "Abstract geometric shapes",
+      "usage": "Visual metaphor for the 4-step method."
+    },
+    "about_team": {
+      "url": "https://images.unsplash.com/photo-1573166364839-1bfe9196c23e?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "alt": "Corporate meeting",
+      "usage": "About page team section."
+    },
+    "tech_overlay": {
+      "url": "https://images.unsplash.com/photo-1764258559470-9bd6b7ad8f83?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "alt": "Glowing tech lines",
+      "usage": "Subtle overlay for 'Performance' and 'SEO' landing pages."
+    }
+  },
+  "admin_panel": {
+    "layout": "Sidebar navigation (left), Top bar (user info), Main content area (right).",
+    "style": "High density, clear data tables, less decorative than marketing pages.",
+    "colors": "Background: #0F0504 (darker than main site), Cards: #1E0D0A."
+  },
+  "implementation_rules": {
+    "framework": "React (Create React App structure)",
+    "language": "JavaScript (.js/.jsx files)",
+    "styling": "Tailwind CSS",
+    "icons": "Lucide React (already installed)",
+    "charts": "Recharts (already installed) for KPI count-ups and analytics visuals.",
+    "routing": "React Router DOM (already installed)",
+    "state_management": "React Context or local state",
+    "critical": [
+      "DO NOT use 'Inter' for Headings. Use 'Sora' (import from Google Fonts).",
+      "Ensure all text meets APCA contrast standards on the dark background.",
+      "Use 'data-testid' on all interactive elements.",
+      "Forms must use controlled components."
+    ]
+  },
+  "universal_guidelines": [
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Don't make generic centered layouts. Use asymmetry.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Every interaction needs micro-animations.",
+    "Use 2-3x more spacing than feels comfortable.",
+    "Never use transparent backgrounds without a blur or scrim."
+  ],
+  "required_packages": [
+    "framer-motion",
+    "react-countup"
+  ]
+}
