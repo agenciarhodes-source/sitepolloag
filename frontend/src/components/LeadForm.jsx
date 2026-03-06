@@ -164,7 +164,7 @@ export default function LeadForm({ type = 'short', source = 'site', ctaLabel = '
         data-testid="lead-form-submit"
         type="submit"
         disabled={loading}
-        className="w-full bg-brand-cta text-[#160907] font-semibold py-3.5 rounded-2xl hover:brightness-110 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-60"
+        className="w-full bg-brand-cta text-[#160907] font-semibold py-3.5 rounded-[22px] hover:brightness-110 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-60"
       >
         {loading ? <><Loader size={18} className="animate-spin" /> Analisando informações…</> : ctaLabel}
       </button>

@@ -52,7 +52,7 @@ export default function LandingPerformance() {
                 Campanhas, páginas e testes com cadência semanal — sem tráfego "no escuro".
               </p>
               <div className="flex gap-4 mt-8">
-                <a href="#auditoria" className="inline-flex items-center gap-2 bg-brand-cta text-[#160907] font-semibold px-8 py-4 rounded-2xl hover:brightness-110 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.3)]">
+                <a href="#auditoria" className="inline-flex items-center gap-2 bg-brand-cta text-[#160907] font-semibold px-8 py-4 rounded-[22px] hover:brightness-110 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.3)]">
                   Pedir auditoria de performance <ArrowRight size={18} />
                 </a>
               </div>

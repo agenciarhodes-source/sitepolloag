@@ -139,7 +139,7 @@ export default function Metodo() {
           <SectionReveal>
             <h2 className="font-sora text-2xl md:text-3xl font-semibold text-brand-text mb-4">Pronto para começar?</h2>
             <p className="text-brand-subtle text-sm mb-8">O método começa com um diagnóstico. Call de 30 min, sem compromisso.</p>
-            <Link to="/diagnostico" className="inline-flex items-center gap-2 bg-brand-cta text-[#160907] font-semibold px-8 py-4 rounded-2xl hover:brightness-110 transition-all duration-300">
+            <Link to="/diagnostico" className="inline-flex items-center gap-2 bg-brand-cta text-[#160907] font-semibold px-8 py-4 rounded-[22px] hover:brightness-110 transition-all duration-300">
               Quero meu diagnóstico <ArrowRight size={18} />
             </Link>
           </SectionReveal>

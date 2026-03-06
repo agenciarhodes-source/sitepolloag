@@ -48,7 +48,7 @@ export default function LandingCRM() {
             <p className="text-brand-muted text-lg mt-6 leading-relaxed">
               Segmentação + jornadas + automação para reduzir churn e elevar ticket.
             </p>
-            <a href="#auditoria-crm" className="mt-8 inline-flex items-center gap-2 bg-brand-cta text-[#160907] font-semibold px-8 py-4 rounded-2xl hover:brightness-110 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.3)]">
+            <a href="#auditoria-crm" className="mt-8 inline-flex items-center gap-2 bg-brand-cta text-[#160907] font-semibold px-8 py-4 rounded-[22px] hover:brightness-110 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.3)]">
               Auditar meu CRM <ArrowRight size={18} />
             </a>
           </div>
