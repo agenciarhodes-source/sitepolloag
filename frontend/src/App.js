@@ -1,51 +1,60 @@
-import { useEffect } from "react";
 import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import Home from "@/pages/Home";
+import Solucoes from "@/pages/Solucoes";
+import SolucaoIA from "@/pages/SolucaoIA";
+import SolucaoGrowth from "@/pages/SolucaoGrowth";
+import SolucaoSEOPage from "@/pages/SolucaoSEOPage";
+import SolucaoCRM from "@/pages/SolucaoCRM";
+import LandingPerformance from "@/pages/LandingPerformance";
+import LandingSEO from "@/pages/LandingSEO";
+import LandingCRM from "@/pages/LandingCRM";
+import Metodo from "@/pages/Metodo";
+import Blog from "@/pages/Blog";
+import BlogPost from "@/pages/BlogPost";
+import Sobre from "@/pages/Sobre";
+import Contato from "@/pages/Contato";
+import Diagnostico from "@/pages/Diagnostico";
+import Admin from "@/pages/Admin";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
-
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
-
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
-
+function Layout({ children }) {
+  const location = useLocation();
+  const isAdmin = location.pathname.startsWith('/admin');
   return (
-    <div>
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
-    </div>
+    <>
+      {!isAdmin && <Navbar />}
+      <main>{children}</main>
+      {!isAdmin && <Footer />}
+    </>
   );
-};
+}
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/solucoes" element={<Solucoes />} />
+            <Route path="/solucoes/ia-first" element={<SolucaoIA />} />
+            <Route path="/solucoes/growth-performance" element={<SolucaoGrowth />} />
+            <Route path="/solucoes/seo-conteudo" element={<SolucaoSEOPage />} />
+            <Route path="/solucoes/crm-base" element={<SolucaoCRM />} />
+            <Route path="/performance" element={<LandingPerformance />} />
+            <Route path="/seo" element={<LandingSEO />} />
+            <Route path="/crm" element={<LandingCRM />} />
+            <Route path="/metodo" element={<Metodo />} />
+            <Route path="/conteudos" element={<Blog />} />
+            <Route path="/conteudos/:slug" element={<BlogPost />} />
+            <Route path="/sobre" element={<Sobre />} />
+            <Route path="/contato" element={<Contato />} />
+            <Route path="/diagnostico" element={<Diagnostico />} />
+            <Route path="/admin" element={<Admin />} />
+          </Routes>
+        </Layout>
       </BrowserRouter>
     </div>
   );
