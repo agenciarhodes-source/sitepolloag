@@ -28,7 +28,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           <div className="lg:col-span-2">
-            <span className="font-sora font-bold text-2xl gradient-text">pollo.ag</span>
+            <span className="font-sora font-bold text-2xl"><span className="text-white">pollo</span><span className="gradient-text">.ag</span></span>
             <p className="text-brand-subtle text-sm mt-4 leading-relaxed max-w-xs">
               Transformamos crescimento em previsibilidade com um motor IA-first que une aquisição, conversão e retenção.
             </p>

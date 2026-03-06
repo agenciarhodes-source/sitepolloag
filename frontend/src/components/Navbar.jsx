@@ -55,7 +55,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link to="/" data-testid="nav-logo" className="flex items-center">
-            <span className="font-sora font-bold text-2xl gradient-text">pollo.ag</span>
+            <span className="font-sora font-bold text-2xl"><span className="text-white">pollo</span><span className="gradient-text">.ag</span></span>
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
@@ -119,7 +119,7 @@ export default function Navbar() {
             <Link
               to="/diagnostico"
               data-testid="nav-cta-btn"
-              className="hidden md:inline-flex items-center bg-brand-cta text-[#160907] font-semibold text-sm px-5 py-2.5 rounded-lg hover:brightness-110 transition-all duration-300 shadow-[0_0_20px_rgba(202,110,35,0.25)]"
+              className="hidden md:inline-flex items-center bg-brand-cta text-[#160907] font-semibold text-sm px-5 py-2.5 rounded-2xl hover:brightness-110 transition-all duration-300 shadow-[0_0_20px_rgba(202,110,35,0.25)]"
             >
               Diagnóstico
             </Link>
@@ -165,7 +165,7 @@ export default function Navbar() {
               <Link
                 to="/diagnostico"
                 data-testid="mobile-cta-btn"
-                className="mt-4 w-full text-center bg-brand-cta text-[#160907] font-semibold py-3.5 rounded-lg hover:brightness-110 transition-all"
+                className="mt-4 w-full text-center bg-brand-cta text-[#160907] font-semibold py-3.5 rounded-2xl hover:brightness-110 transition-all"
               >
                 Quero meu diagnóstico
               </Link>

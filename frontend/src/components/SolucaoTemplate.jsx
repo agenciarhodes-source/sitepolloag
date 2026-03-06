@@ -18,7 +18,7 @@ export default function SolucaoTemplate({ title, tag, description, whatIs, benef
             <p className="text-brand-muted text-lg mt-6 leading-relaxed">{description}</p>
             <Link
               to={ctaTo}
-              className="mt-8 inline-flex items-center gap-2 bg-brand-cta text-[#160907] font-semibold px-8 py-4 rounded-lg hover:brightness-110 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.3)]"
+              className="mt-8 inline-flex items-center gap-2 bg-brand-cta text-[#160907] font-semibold px-8 py-4 rounded-2xl hover:brightness-110 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.3)]"
             >
               {ctaLabel} <ArrowRight size={18} />
             </Link>
@@ -72,7 +72,7 @@ export default function SolucaoTemplate({ title, tag, description, whatIs, benef
           <SectionReveal>
             <h2 className="font-sora text-2xl md:text-3xl font-semibold text-brand-text mb-4">Quer implementar essa solução?</h2>
             <p className="text-brand-subtle text-sm mb-8">Começamos com um diagnóstico para entender seu contexto e desenhar o que faz sentido.</p>
-            <Link to={ctaTo} className="inline-flex items-center gap-2 bg-brand-cta text-[#160907] font-semibold px-8 py-4 rounded-lg hover:brightness-110 transition-all duration-300">
+            <Link to={ctaTo} className="inline-flex items-center gap-2 bg-brand-cta text-[#160907] font-semibold px-8 py-4 rounded-2xl hover:brightness-110 transition-all duration-300">
               {ctaLabel} <ArrowRight size={18} />
             </Link>
           </SectionReveal>

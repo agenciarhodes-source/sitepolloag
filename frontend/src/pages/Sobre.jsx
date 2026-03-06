@@ -117,7 +117,7 @@ export default function Sobre() {
                 </ul>
               </div>
             </div>
-            <Link to="/diagnostico" className="mt-8 inline-flex items-center gap-2 bg-brand-cta text-[#160907] font-semibold px-8 py-4 rounded-lg hover:brightness-110 transition-all duration-300">
+            <Link to="/diagnostico" className="mt-8 inline-flex items-center gap-2 bg-brand-cta text-[#160907] font-semibold px-8 py-4 rounded-2xl hover:brightness-110 transition-all duration-300">
               Quero meu diagnóstico <ArrowRight size={18} />
             </Link>
           </SectionReveal>
