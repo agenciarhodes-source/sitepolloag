@@ -92,7 +92,7 @@ export default function BlogPost() {
         <div className="mt-12 pt-8 border-t border-[#3A231D]">
           <Link
             to="/diagnostico"
-            className="inline-flex items-center gap-2 bg-brand-cta text-[#160907] font-semibold px-8 py-4 rounded-lg hover:brightness-110 transition-all duration-300"
+            className="inline-flex items-center gap-2 bg-brand-cta text-white font-semibold px-8 py-4 rounded-lg hover:brightness-125 transition-all duration-300"
           >
             Quero meu diagnóstico
           </Link>

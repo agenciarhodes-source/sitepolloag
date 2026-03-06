@@ -54,7 +54,7 @@ export default function Blog() {
                 onClick={() => handleCategory(cat)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 border ${
                   activeCategory === cat
-                    ? 'bg-brand-cta text-[#160907] border-brand-cta'
+                    ? 'bg-brand-cta text-white border-brand-cta'
                     : 'border-[#3A231D] text-brand-subtle hover:border-brand-cta hover:text-brand-cta'
                 }`}
               >

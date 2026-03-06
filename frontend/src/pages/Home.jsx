@@ -121,7 +121,7 @@ function Hero() {
             <Link
               to="/diagnostico"
               data-testid="hero-cta-primary"
-              className="inline-flex items-center justify-center gap-2 bg-brand-cta text-[#160907] font-semibold px-8 py-4 rounded-full hover:brightness-110 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.3)] text-base"
+              className="inline-flex items-center justify-center gap-2 bg-brand-cta text-white font-semibold px-8 py-4 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.3)] text-base"
             >
               Quero meu diagnóstico <ArrowRight size={18} />
             </Link>
@@ -380,7 +380,7 @@ function CTABanner() {
             <Link
               to="/diagnostico"
               data-testid="cta-banner-primary"
-              className="inline-flex items-center justify-center gap-2 bg-brand-cta text-[#160907] font-semibold px-10 py-4 rounded-full hover:brightness-110 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.3)] text-base"
+              className="inline-flex items-center justify-center gap-2 bg-brand-cta text-white font-semibold px-10 py-4 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.3)] text-base"
             >
               Quero meu diagnóstico <ArrowRight size={18} />
             </Link>
