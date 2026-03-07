@@ -41,9 +41,9 @@ const METHOD_STEPS = [
 ];
 
 const KPIS = [
-  { value: 32, suffix: '%', label: 'Aumento de conversão', sublabel: 'placeholder' },
-  { value: 18, suffix: '%', label: 'Redução de churn', sublabel: 'placeholder' },
-  { value: 22, suffix: '%', label: 'Crescimento de LTV', sublabel: 'placeholder' },
+  { value: 32, suffix: '%', label: 'Aumento de conversão', sublabel: '' },
+  { value: 18, suffix: '%', label: 'Redução de churn', sublabel: '' },
+  { value: 22, suffix: '%', label: 'Crescimento de LTV', sublabel: '' },
 ];
 
 const DELIVERABLES = [
@@ -285,7 +285,6 @@ function KPIsSection() {
                   />
                 </div>
                 <p className="text-brand-muted font-medium mt-3">{kpi.label}</p>
-                <p className="text-brand-subtle text-xs mt-1">({kpi.sublabel})</p>
               </div>
             </SectionReveal>
           ))}

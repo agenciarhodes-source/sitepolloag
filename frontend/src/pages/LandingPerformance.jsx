@@ -68,7 +68,7 @@ export default function LandingPerformance() {
                   ].map((stat) => (
                     <div key={stat.label} className="flex justify-between items-center py-3 border-b border-[#3A231D] last:border-0">
                       <span className="text-brand-subtle text-sm">{stat.label}</span>
-                      <span className={`font-sora font-bold text-lg ${stat.color}`}>{stat.value} <span className="text-xs font-normal text-brand-subtle">(placeholder)</span></span>
+                      <span className={`font-sora font-bold text-lg ${stat.color}`}>{stat.value}</span>
                     </div>
                   ))}
                 </div>
