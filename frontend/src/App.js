@@ -17,6 +17,7 @@ import BlogPost from "@/pages/BlogPost";
 import Sobre from "@/pages/Sobre";
 import Contato from "@/pages/Contato";
 import Diagnostico from "@/pages/Diagnostico";
+import LandingWhatsApp from "@/pages/LandingWhatsApp";
 import Admin from "@/pages/Admin";
 
 function Layout({ children }) {
@@ -52,6 +53,7 @@ function App() {
             <Route path="/sobre" element={<Sobre />} />
             <Route path="/contato" element={<Contato />} />
             <Route path="/diagnostico" element={<Diagnostico />} />
+            <Route path="/whatsapp-ia" element={<LandingWhatsApp />} />
             <Route path="/admin" element={<Admin />} />
           </Routes>
         </Layout>

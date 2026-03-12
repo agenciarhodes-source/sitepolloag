@@ -10,7 +10,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { ArrowRight, Zap, TrendingUp, Database, CheckCircle, ChevronRight } from 'lucide-react';
+import { ArrowRight, Zap, TrendingUp, Database, CheckCircle, ChevronRight, MessageSquare } from 'lucide-react';
 
 const PILLARS = [
   {
@@ -223,6 +223,28 @@ function PilarsSection() {
             );
           })}
         </StaggerContainer>
+        {/* Destaque WhatsApp IA */}
+        <SectionReveal className="mt-6">
+          <Link
+            to="/whatsapp-ia"
+            data-testid="pillar-whatsapp-ia"
+            className="group flex flex-col md:flex-row items-center gap-6 bg-gradient-to-r from-[#1E0D0A] to-[#24110E] border border-[#CA6E23]/40 rounded-2xl p-8 hover:border-[#CA6E23]/80 transition-all duration-300 hover:-translate-y-1"
+          >
+            <div className="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center flex-shrink-0">
+              <MessageSquare size={22} className="text-[#160907]" />
+            </div>
+            <div className="flex-1 text-center md:text-left">
+              <div className="inline-flex items-center gap-2 text-xs font-semibold text-brand-cta uppercase tracking-widest mb-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-cta animate-pulse" /> Novo
+              </div>
+              <h3 className="font-sora text-xl font-semibold text-brand-text">WhatsApp + IA: máquina de vendas</h3>
+              <p className="text-brand-subtle text-sm mt-1">Captação, qualificação, score, CRM e Meta — tudo integrado em uma operação comercial com multiagentes.</p>
+            </div>
+            <div className="flex items-center gap-2 text-brand-cta text-sm font-medium group-hover:gap-3 transition-all flex-shrink-0">
+              Conhecer <ChevronRight size={14} />
+            </div>
+          </Link>
+        </SectionReveal>
       </div>
     </section>
   );
