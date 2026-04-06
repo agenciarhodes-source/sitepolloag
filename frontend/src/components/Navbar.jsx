@@ -13,6 +13,7 @@ const SOLUCOES_MAIN = [
 
 const SOLUCOES_LANDINGS = [
   { label: 'WhatsApp + IA', path: '/whatsapp-ia', desc: 'Operação comercial com multiagentes' },
+  { label: 'Tráfego Pago', path: '/trafego-pago', desc: 'Google Ads + Meta Ads com IA' },
   { label: 'Mídia de Performance', path: '/performance', desc: 'Auditoria de performance' },
   { label: 'SEO', path: '/seo', desc: 'Diagnóstico SEO' },
   { label: 'CRM', path: '/crm', desc: 'Auditoria de CRM' },

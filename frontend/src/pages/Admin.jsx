@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Plus, Edit2, Trash2, Eye, EyeOff, LogOut, FileText, Users, ArrowRight } from 'lucide-react';
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
-const ADMIN_PASSWORD = 'polloag2024';
+const ADMIN_PASSWORD = process.env.REACT_APP_ADMIN_PASSWORD || 'polloag2024';
 
 const CATEGORIES = ['IA-first', 'Performance', 'SEO', 'CRM', 'Operações'];
 

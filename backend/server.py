@@ -99,8 +99,8 @@ async def create_lead(lead_data: LeadCreate):
 
 
 @api_router.get("/leads", response_model=List[Lead])
-async def get_leads():
-    leads = await db.leads.find({}, {"_id": 0}).to_list(1000)
+async def get_leads(skip: int = 0, limit: int = 100):
+    leads = await db.leads.find({}, {"_id": 0}).sort("created_at", -1).skip(skip).to_list(limit)
     return leads
 
 
@@ -109,8 +109,8 @@ async def get_leads():
 # ============================================================
 
 @api_router.get("/blog/admin/posts", response_model=List[BlogPost])
-async def get_all_posts_admin():
-    posts = await db.blog_posts.find({}, {"_id": 0}).sort("created_at", -1).to_list(1000)
+async def get_all_posts_admin(skip: int = 0, limit: int = 100):
+    posts = await db.blog_posts.find({}, {"_id": 0}).sort("created_at", -1).skip(skip).to_list(limit)
     return posts
 
 
@@ -131,9 +131,9 @@ async def create_post(post_data: BlogPostCreate):
 
 
 @api_router.get("/blog/posts", response_model=List[BlogPost])
-async def get_posts(published_only: bool = True):
+async def get_posts(published_only: bool = True, skip: int = 0, limit: int = 50):
     query = {"published": True} if published_only else {}
-    posts = await db.blog_posts.find(query, {"_id": 0}).sort("created_at", -1).to_list(1000)
+    posts = await db.blog_posts.find(query, {"_id": 0}).sort("created_at", -1).skip(skip).to_list(limit)
     return posts
 
 
