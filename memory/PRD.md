@@ -80,7 +80,9 @@ Rotas implementadas:
 - [x] Landing page **Tráfego Pago** (`/trafego-pago`) criada com copy de PDF
 - [x] Landing page **WhatsApp AI** (`/whatsapp-ai`) criada com copy fornecido
 - [x] Cards da seção de Pacotes com altura igual (`items-stretch` + `h-full` no wrapper)
-- [x] Preços nos pacotes: Starter R$1.997 · Growth R$3.497 · Scale R$5.997/mês
+- [x] Preços corretos nos pacotes: Starter R$997 · Growth R$1.997 · Scale R$3.497/mês
+- [x] Verba de mídia mínima exibida em cada pacote (R$1k / R$3k / R$8k)
+- [x] Descrições dos pacotes atualizadas conforme referência do cliente
 - [x] Botões 100% arredondados (`rounded-full`) em toda a aplicação
 - [x] Texto branco (`text-white`) em botões primários + `hover:brightness-125`
 - [x] Correções de deploy: senha admin via `.env`, paginação no backend
