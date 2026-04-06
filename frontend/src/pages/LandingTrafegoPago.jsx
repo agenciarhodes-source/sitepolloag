@@ -43,9 +43,10 @@ const PACKAGES = [
     id: 'starter',
     audience: 'Micro / MEI',
     name: 'Starter',
-    price: 'R$ 1.997',
+    price: 'R$ 997',
     priceNote: 'fee de gestão/mês',
-    desc: 'Para negócios que querem começar a anunciar com método e parar de desperdiçar verba.',
+    minMedia: '+ verba de mídia mínima: R$ 1.000/mês',
+    desc: 'Para quem está começando a investir em anúncios e quer validar suas primeiras campanhas com profissionalismo.',
     items: [
       '1 plataforma (Google Ads ou Meta Ads)',
       'Até 2 campanhas ativas',
@@ -62,10 +63,11 @@ const PACKAGES = [
     id: 'growth',
     audience: 'PME',
     name: 'Growth',
-    price: 'R$ 3.497',
+    price: 'R$ 1.997',
     priceNote: 'fee de gestão/mês',
+    minMedia: '+ verba de mídia mínima: R$ 3.000/mês',
     badge: 'Mais popular',
-    desc: 'Para empresas prontas para escalar com Google + Meta Ads, dados integrados e rotina de otimização.',
+    desc: 'Para pequenas e médias empresas que já faturam e querem escalar com estratégia de dados e funis de conversão.',
     items: [
       '2 plataformas (Google + Meta Ads)',
       'Até 5 campanhas ativas',
@@ -84,9 +86,10 @@ const PACKAGES = [
     id: 'scale',
     audience: 'Média Empresa',
     name: 'Scale',
-    price: 'R$ 5.997',
+    price: 'R$ 3.497',
     priceNote: 'fee de gestão/mês',
-    desc: 'Para operações que precisam de múltiplas plataformas, automação de funil e visão completa de dados.',
+    minMedia: '+ verba de mídia mínima: R$ 8.000/mês',
+    desc: 'Para empresas em crescimento acelerado que precisam de operação completa com inteligência e automação.',
     items: [
       'Até 3 plataformas (Google + Meta + TikTok/LinkedIn)',
       'Campanhas ilimitadas',
@@ -338,9 +341,9 @@ function PackagesSection() {
                     <span className={`font-sora text-3xl font-bold ${pkg.highlight ? 'gradient-text' : 'text-brand-text'}`}>
                       {pkg.price}
                     </span>
-                    <span className="text-brand-subtle text-xs">/{pkg.priceNote.replace('fee de gestão/', '')}</span>
+                    <span className="text-brand-subtle text-xs">/mês</span>
                   </div>
-                  <p className="text-brand-subtle text-xs mt-1">{pkg.priceNote.split('/')[0]}</p>
+                  <p className="text-brand-subtle text-xs mt-1.5">{pkg.minMedia}</p>
                 </div>
                 <ul className="space-y-2.5 flex-1 mb-8">
                   {pkg.items.map((item) => (
