@@ -506,9 +506,17 @@ function FinalCTASection() {
           </SectionReveal>
 
           <SectionReveal delay={0.2}>
-            <div className="bg-[#1E0D0A] border border-[#3A231D] rounded-2xl p-8">
-              <h3 className="font-sora text-xl font-semibold text-brand-text mb-6">Agendar diagnóstico estratégico</h3>
-              <LeadForm type="qualified" source="landing_trafego_pago" ctaLabel="Agendar diagnóstico gratuito" />
+            <div className="flex flex-col items-center lg:items-start gap-6">
+              <Link
+                to="/diagnostico"
+                data-testid="final-cta-tp-btn"
+                className="inline-flex items-center justify-center gap-3 bg-brand-cta text-white font-bold px-10 py-5 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_40px_rgba(202,110,35,0.4)] text-lg w-full lg:w-auto"
+              >
+                Agendar diagnóstico gratuito <ArrowRight size={20} />
+              </Link>
+              <p className="text-brand-subtle text-xs text-center lg:text-left">
+                Sem spam. Seus dados ficam protegidos (LGPD).
+              </p>
             </div>
           </SectionReveal>
         </div>
