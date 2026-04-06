@@ -57,7 +57,7 @@ Rotas implementadas:
 
 ---
 
-## O que foi implementado (v1 — data: 2025)
+## O que foi implementado (v2 — data: Abr/2026)
 
 ### Frontend
 - [x] Navbar fixa com dropdown Soluções e CTA
@@ -77,11 +77,20 @@ Rotas implementadas:
 - [x] KPIs com count-up
 - [x] Footer completo com links organizados
 
+- [x] Landing page **Tráfego Pago** (`/trafego-pago`) criada com copy de PDF
+- [x] Landing page **WhatsApp AI** (`/whatsapp-ai`) criada com copy fornecido
+- [x] Cards da seção de Pacotes com altura igual (`items-stretch` + `h-full` no wrapper)
+- [x] Preços nos pacotes: Starter R$1.997 · Growth R$3.497 · Scale R$5.997/mês
+- [x] Botões 100% arredondados (`rounded-full`) em toda a aplicação
+- [x] Texto branco (`text-white`) em botões primários + `hover:brightness-125`
+- [x] Correções de deploy: senha admin via `.env`, paginação no backend
+
 ### Backend
 - [x] Endpoint de leads (POST + GET)
 - [x] Blog CRUD completo (create, read, update, delete)
 - [x] Suporte a posts publicados/rascunho
 - [x] Endpoint de categorias
+- [x] Paginação nos endpoints
 
 ---
 
@@ -93,6 +102,7 @@ Rotas implementadas:
 - [ ] Proteção CSRF nos formulários
 
 ### P1 (Importante)
+- [ ] Rastreamento de parâmetros UTM nos formulários de lead
 - [ ] Upload de imagens para posts (atualmente só URL)
 - [ ] Busca no blog
 - [ ] Notificação por email quando um lead é capturado
@@ -103,8 +113,9 @@ Rotas implementadas:
 - [ ] Schema.org markup (Organization + FAQ + Article)
 - [ ] Sitemap.xml e robots.txt
 - [ ] Google Analytics / GTM
-- [ ] WhatsApp flutuante
+- [ ] Widget WhatsApp flutuante
 - [ ] Chatbot IA para qualificação de leads
+- [ ] Substituir cases/depoimentos fictícios por dados reais do cliente
 
 ---
 

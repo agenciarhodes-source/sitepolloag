@@ -43,6 +43,8 @@ const PACKAGES = [
     id: 'starter',
     audience: 'Micro / MEI',
     name: 'Starter',
+    price: 'R$ 1.997',
+    priceNote: 'fee de gestão/mês',
     desc: 'Para negócios que querem começar a anunciar com método e parar de desperdiçar verba.',
     items: [
       '1 plataforma (Google Ads ou Meta Ads)',
@@ -60,6 +62,8 @@ const PACKAGES = [
     id: 'growth',
     audience: 'PME',
     name: 'Growth',
+    price: 'R$ 3.497',
+    priceNote: 'fee de gestão/mês',
     badge: 'Mais popular',
     desc: 'Para empresas prontas para escalar com Google + Meta Ads, dados integrados e rotina de otimização.',
     items: [
@@ -80,6 +84,8 @@ const PACKAGES = [
     id: 'scale',
     audience: 'Média Empresa',
     name: 'Scale',
+    price: 'R$ 5.997',
+    priceNote: 'fee de gestão/mês',
     desc: 'Para operações que precisam de múltiplas plataformas, automação de funil e visão completa de dados.',
     items: [
       'Até 3 plataformas (Google + Meta + TikTok/LinkedIn)',
@@ -307,9 +313,9 @@ function PackagesSection() {
           </p>
         </SectionReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
           {PACKAGES.map((pkg, i) => (
-            <SectionReveal key={pkg.id} delay={i * 0.1}>
+            <SectionReveal key={pkg.id} delay={i * 0.1} className="h-full">
               <div className={`relative rounded-2xl p-8 flex flex-col h-full ${
                 pkg.highlight
                   ? 'bg-gradient-to-b from-[#CA6E23]/15 to-[#1E0D0A] border-2 border-[#CA6E23]/60 shadow-[0_0_50px_rgba(202,110,35,0.2)]'
@@ -322,10 +328,19 @@ function PackagesSection() {
                     </span>
                   </div>
                 )}
-                <div className="mb-6">
+                <div className="mb-5">
                   <span className="text-xs font-semibold text-brand-subtle uppercase tracking-widest">{pkg.audience}</span>
                   <h3 className="font-sora text-2xl font-bold text-brand-text mt-1">{pkg.name}</h3>
                   <p className="text-brand-subtle text-sm mt-2 leading-relaxed">{pkg.desc}</p>
+                </div>
+                <div className={`mb-6 pb-6 border-b ${pkg.highlight ? 'border-[#CA6E23]/30' : 'border-[#3A231D]'}`}>
+                  <div className="flex items-baseline gap-1.5">
+                    <span className={`font-sora text-3xl font-bold ${pkg.highlight ? 'gradient-text' : 'text-brand-text'}`}>
+                      {pkg.price}
+                    </span>
+                    <span className="text-brand-subtle text-xs">/{pkg.priceNote.replace('fee de gestão/', '')}</span>
+                  </div>
+                  <p className="text-brand-subtle text-xs mt-1">{pkg.priceNote.split('/')[0]}</p>
                 </div>
                 <ul className="space-y-2.5 flex-1 mb-8">
                   {pkg.items.map((item) => (
