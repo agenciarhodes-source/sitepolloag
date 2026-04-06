@@ -143,7 +143,7 @@ function HeroSection() {
           <SectionReveal>
             <div className="inline-flex items-center gap-2 text-xs font-semibold text-brand-cta uppercase tracking-widest border border-[#CA6E23]/30 bg-[#CA6E23]/10 px-3 py-1.5 rounded-full mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-cta animate-pulse" />
-              Proposta Comercial 2026 · pollo.ag
+              Mídia de Performance · pollo.ag
             </div>
             <h1 className="font-sora text-4xl md:text-5xl lg:text-6xl font-bold text-brand-text leading-tight">
               Tráfego Pago que gera{' '}
