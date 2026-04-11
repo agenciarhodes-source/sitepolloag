@@ -34,6 +34,7 @@ Rotas implementadas:
 | `/solucoes/growth-performance` | Solução Growth |
 | `/solucoes/seo-conteudo` | Solução SEO |
 | `/solucoes/crm-base` | Solução CRM |
+| `/ia-aplicada` | Landing IA Aplicada ao Negócio |
 | `/performance` | Landing Mídia de Performance |
 | `/seo` | Landing SEO |
 | `/crm` | Landing CRM |
@@ -77,7 +78,7 @@ Rotas implementadas:
 - [x] KPIs com count-up
 - [x] Footer completo com links organizados
 
-- [x] Landing page **Tráfego Pago** (`/trafego-pago`) criada com copy de PDF
+- [x] Landing page **IA Aplicada ao Negócio** (`/ia-aplicada`) — 9 seções completas: Hero, Stats, Sinais, Entregáveis, Método 5 etapas, Use Cases, Pacotes, FAQ accordion (12 perguntas), CTA final
 - [x] Landing page **WhatsApp AI** (`/whatsapp-ai`) criada com copy fornecido
 - [x] Cards da seção de Pacotes com altura igual (`items-stretch` + `h-full` no wrapper)
 - [x] Preços corretos nos pacotes: Starter R$997 · Growth R$1.997 · Scale R$3.497/mês
