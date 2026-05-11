@@ -322,14 +322,11 @@ function OfertaSection() {
                 </li>
               ))}
             </ul>
-            <p className="text-brand-subtle text-xs mt-6">
-              Começa com uma call de 30 min. Sem compromisso imediato.
-            </p>
+
           </SectionReveal>
           <SectionReveal delay={0.2}>
             <div className="bg-[#160907] border border-[#3A231D] rounded-2xl p-8 flex flex-col items-center text-center">
-              <h3 className="font-sora text-xl font-semibold text-brand-text mb-4">Agendar diagnóstico estratégico</h3>
-              <p className="text-brand-subtle text-sm mb-8">Começa com uma call de 30 min. Sem compromisso imediato.</p>
+              <h3 className="font-sora text-xl font-semibold text-brand-text mb-6">Agendar diagnóstico estratégico</h3>
               <Link to="/diagnostico"
                 data-testid="cta-home-oferta"
                 className="inline-flex items-center justify-center gap-2 bg-brand-cta text-white font-semibold px-10 py-5 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.35)] text-base w-full">
