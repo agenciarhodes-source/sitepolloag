@@ -156,7 +156,7 @@ function HeroSection() {
               <Link to="/diagnostico"
                 data-testid="hero-cta-tp-secondary"
                 className="inline-flex items-center justify-center gap-2 border border-[#3A231D] text-brand-muted hover:bg-[#3A231D]/30 hover:text-brand-text font-medium px-8 py-4 rounded-full transition-all duration-300 text-base">
-                Agendar diagnóstico
+                Falar com especialista
               </Link>
             </div>
           </SectionReveal>
