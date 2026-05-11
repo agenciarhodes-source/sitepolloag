@@ -204,10 +204,6 @@ function HeroSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div>
           <SectionReveal>
-            <div className="inline-flex items-center gap-2 text-xs font-semibold text-brand-cta uppercase tracking-widest border border-[#CA6E23]/30 bg-[#CA6E23]/10 px-3 py-1.5 rounded-full mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-cta animate-pulse" />
-              IA Aplicada ao Negócio · pollo.ag
-            </div>
             <h1 className="font-sora text-4xl md:text-5xl lg:text-6xl font-bold text-brand-text leading-tight">
               IA que{' '}
               <span className="gradient-text">resolve processo</span>{' '}
@@ -309,7 +305,6 @@ function SignalsSection() {
     <section className="py-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <SectionReveal className="text-center mb-14">
-          <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">Sinais de necessidade</p>
           <h2 className="font-sora text-3xl md:text-4xl font-bold text-brand-text max-w-3xl mx-auto leading-tight">
             Sua empresa tem algum desses sinais?
           </h2>
@@ -353,7 +348,6 @@ function DeliverablesSection() {
     <section className="py-24 bg-brand-surface1">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <SectionReveal className="text-center mb-14">
-          <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">O que entregamos</p>
           <h2 className="font-sora text-3xl md:text-4xl font-bold text-brand-text max-w-3xl mx-auto leading-tight">
             Quatro frentes de{' '}
             <span className="gradient-text">IA aplicada</span>{' '}
@@ -406,7 +400,6 @@ function MethodSection() {
     <section id="como-funciona" className="py-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <SectionReveal className="text-center mb-14">
-          <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">Método</p>
           <h2 className="font-sora text-3xl md:text-4xl font-bold text-brand-text max-w-3xl mx-auto leading-tight">
             IA-first com Governança{' '}
             <span className="gradient-text">— método pollo.ag</span>
@@ -451,7 +444,6 @@ function MethodSection() {
 
         <SectionReveal className="mt-12">
           <div className="bg-[#1E0D0A] border border-[#CA6E23]/20 rounded-2xl p-8">
-            <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-5">O que você recebe ao final</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {[
                 'Solução funcional em produção',
@@ -479,7 +471,6 @@ function UseCasesSection() {
     <section className="py-24 bg-brand-surface1">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <SectionReveal className="text-center mb-14">
-          <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">Aplicações práticas</p>
           <h2 className="font-sora text-3xl md:text-4xl font-bold text-brand-text max-w-3xl mx-auto leading-tight">
             O que IA aplicada{' '}
             <span className="gradient-text">resolve na prática</span>
@@ -518,7 +509,6 @@ function PackagesSection() {
     <section id="pacotes" className="py-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <SectionReveal className="text-center mb-14">
-          <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">Pacotes</p>
           <h2 className="font-sora text-3xl md:text-4xl font-bold text-brand-text max-w-2xl mx-auto leading-tight">
             Escolha o modelo certo para o seu momento
           </h2>
@@ -548,7 +538,6 @@ function PackagesSection() {
                   <p className="text-brand-subtle text-sm mt-2 leading-relaxed">{pkg.desc}</p>
                 </div>
                 <div className={`mb-5 pb-5 border-b ${pkg.highlight ? 'border-[#CA6E23]/30' : 'border-[#3A231D]'}`}>
-                  <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-2">Para quem é</p>
                   <p className="text-brand-muted text-sm leading-relaxed">{pkg.forWhom}</p>
                 </div>
                 <ul className="space-y-2.5 flex-1 mb-6">
@@ -601,7 +590,6 @@ function FAQSection() {
     <section className="py-24 bg-brand-surface1">
       <div className="max-w-4xl mx-auto px-6 md:px-12">
         <SectionReveal className="text-center mb-12">
-          <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">Dúvidas frequentes</p>
           <h2 className="font-sora text-3xl md:text-4xl font-bold text-brand-text leading-tight">
             Perguntas que valem a resposta
           </h2>
@@ -642,7 +630,6 @@ function FinalCTASection() {
       <div className="absolute top-0 left-0 right-0 h-px gradient-bg opacity-80" />
       <div className="relative max-w-4xl mx-auto px-6 md:px-12 text-center">
         <SectionReveal>
-          <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-5">Próximo passo</p>
           <h2 className="font-sora text-3xl md:text-5xl font-bold text-brand-text leading-tight mb-6">
             Diagnóstico gratuito.{' '}
             <span className="gradient-text">Resultado em semanas.</span>

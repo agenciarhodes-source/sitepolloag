@@ -26,7 +26,6 @@ export default function Sobre() {
         <div className="relative max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <SectionReveal>
-              <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">Sobre a pollo.ag</p>
               <h1 className="font-sora text-4xl md:text-5xl lg:text-6xl font-bold text-brand-text leading-tight">
                 IA-first com{' '}
                 <span className="gradient-text">humano no centro.</span>
@@ -43,7 +42,7 @@ export default function Sobre() {
                 <blockquote className="font-sora text-lg font-medium text-brand-text leading-relaxed italic mb-4">
                   "Menos ruído, mais resultado. Menos esforço disperso, mais clareza sobre o que funciona."
                 </blockquote>
-                <p className="text-brand-subtle text-sm">— Manifesto pollo.ag</p>
+                <p className="text-brand-subtle text-sm">— Diego Martins</p>
               </div>
             </SectionReveal>
           </div>
@@ -53,7 +52,6 @@ export default function Sobre() {
       <section className="py-20 bg-brand-surface1">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <SectionReveal className="mb-12">
-            <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">Princípios</p>
             <h2 className="font-sora text-2xl md:text-3xl font-semibold text-brand-text">O que guia nosso trabalho.</h2>
           </SectionReveal>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -72,7 +70,6 @@ export default function Sobre() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <SectionReveal className="mb-12">
-            <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">Como Trabalhamos</p>
             <h2 className="font-sora text-2xl md:text-3xl font-semibold text-brand-text">Do diagnóstico ao handoff.</h2>
           </SectionReveal>
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -97,7 +94,6 @@ export default function Sobre() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 text-left">
               <div className="bg-[#160907] border border-[#CA6E23]/30 rounded-2xl p-6">
-                <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-3">Para quem é</p>
                 <ul className="space-y-2">
                   {['Empresas B2B com time comercial ou atendimento', 'Negócios que querem previsibilidade de crescimento', 'Quem já tem operação e quer escalar com controle', 'Times que precisam de método e não só de execução'].map((item) => (
                     <li key={item} className="flex items-start gap-2 text-brand-muted text-sm">

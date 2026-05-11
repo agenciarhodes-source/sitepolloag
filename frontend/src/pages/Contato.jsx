@@ -9,7 +9,6 @@ export default function Contato() {
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <SectionReveal>
-              <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">Contato</p>
               <h1 className="font-sora text-4xl md:text-5xl font-bold text-brand-text leading-tight">
                 Fale com{' '}
                 <span className="gradient-text">um especialista.</span>

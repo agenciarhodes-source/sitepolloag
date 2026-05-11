@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import SectionReveal, { StaggerContainer, StaggerItem } from '@/components/SectionReveal';
-import LeadForm from '@/components/LeadForm';
 import CountUp from 'react-countup';
 import {
   TrendingUp, Target, Zap, BarChart2, CheckCircle, ArrowRight,
@@ -141,10 +140,6 @@ function HeroSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div>
           <SectionReveal>
-            <div className="inline-flex items-center gap-2 text-xs font-semibold text-brand-cta uppercase tracking-widest border border-[#CA6E23]/30 bg-[#CA6E23]/10 px-3 py-1.5 rounded-full mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-cta animate-pulse" />
-              Mídia de Performance · pollo.ag
-            </div>
             <h1 className="font-sora text-4xl md:text-5xl lg:text-6xl font-bold text-brand-text leading-tight">
               Tráfego Pago que gera{' '}
               <span className="gradient-text">resultado real.</span>
@@ -199,7 +194,6 @@ function MarketSection() {
     <section className="py-24 bg-brand-surface1">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <SectionReveal className="text-center mb-14">
-          <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">Cenário de Mercado</p>
           <h2 className="font-sora text-3xl md:text-4xl font-bold text-brand-text leading-tight max-w-3xl mx-auto">
             O mercado digital brasileiro não para de crescer.
           </h2>
@@ -240,7 +234,6 @@ function WhyInvestSection() {
     <section className="py-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <SectionReveal className="text-center mb-14">
-          <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">Por que investir</p>
           <h2 className="font-sora text-3xl md:text-4xl font-bold text-brand-text max-w-3xl mx-auto leading-tight">
             Tráfego pago é o caminho mais rápido para{' '}
             <span className="gradient-text">escalar seu faturamento.</span>
@@ -273,7 +266,6 @@ function ScopeSection() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <SectionReveal>
-            <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">Escopo do Serviço</p>
             <h2 className="font-sora text-3xl md:text-4xl font-bold text-brand-text leading-tight mb-4">
               O que a <span className="gradient-text">pollo.ag</span> entrega
             </h2>
@@ -307,7 +299,6 @@ function PackagesSection() {
     <section id="pacotes" className="py-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <SectionReveal className="text-center mb-14">
-          <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">Pacotes</p>
           <h2 className="font-sora text-3xl md:text-4xl font-bold text-brand-text max-w-2xl mx-auto leading-tight">
             Escolha o plano ideal para o seu momento
           </h2>
@@ -388,7 +379,6 @@ function CompareSection() {
     <section className="py-24 bg-brand-surface1">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <SectionReveal className="text-center mb-12">
-          <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">Comparativo</p>
           <h2 className="font-sora text-3xl md:text-4xl font-bold text-brand-text">Entenda cada plano em detalhe</h2>
         </SectionReveal>
         <SectionReveal>
@@ -434,7 +424,6 @@ function ResultsSection() {
     <section className="py-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <SectionReveal className="text-center mb-14">
-          <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">Resultados Reais</p>
           <h2 className="font-sora text-3xl md:text-4xl font-bold text-brand-text max-w-2xl mx-auto leading-tight">
             O que esperar com tráfego pago bem gerenciado
           </h2>
@@ -472,7 +461,6 @@ function FinalCTASection() {
       <div className="relative max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <SectionReveal>
-            <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">Próximo Passo</p>
             <h2 className="font-sora text-3xl md:text-4xl font-bold text-brand-text leading-tight mb-4">
               Pronto para transformar seu investimento em{' '}
               <span className="gradient-text">crescimento real?</span>

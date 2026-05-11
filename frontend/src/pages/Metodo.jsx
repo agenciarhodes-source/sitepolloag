@@ -1,5 +1,4 @@
 import SectionReveal, { StaggerContainer, StaggerItem } from '@/components/SectionReveal';
-import LeadForm from '@/components/LeadForm';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
@@ -54,7 +53,6 @@ export default function Metodo() {
         <div className="absolute top-0 left-0 right-0 h-px gradient-bg opacity-60" />
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <SectionReveal className="max-w-3xl">
-            <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">Nosso Método</p>
             <h1 className="font-sora text-4xl md:text-5xl lg:text-6xl font-bold text-brand-text leading-tight">
               Método pollo.ag:{' '}
               <span className="gradient-text">diagnóstico, arquitetura e rotina.</span>
@@ -107,7 +105,6 @@ export default function Metodo() {
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <SectionReveal>
-              <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">Cadência Semanal</p>
               <h2 className="font-sora text-2xl md:text-3xl font-semibold text-brand-text mb-6">Rituais que criam previsibilidade.</h2>
               <div className="space-y-3">
                 {RITUALS.map((r) => (
@@ -119,7 +116,6 @@ export default function Metodo() {
               </div>
             </SectionReveal>
             <SectionReveal delay={0.2}>
-              <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">Governança IA</p>
               <h2 className="font-sora text-2xl md:text-3xl font-semibold text-brand-text mb-6">Human-in-the-loop.</h2>
               <div className="space-y-4">
                 {PRINCIPLES.map((p) => (

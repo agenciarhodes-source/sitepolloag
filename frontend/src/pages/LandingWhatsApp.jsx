@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import SectionReveal, { StaggerContainer, StaggerItem } from '@/components/SectionReveal';
-import LeadForm from '@/components/LeadForm';
 import {
   MessageSquare, Zap, Target, Users, Database, TrendingUp, Eye, Settings,
   Calendar, BarChart2, Shield, Cpu, Layers, ArrowRight, CheckCircle,
@@ -130,10 +129,6 @@ function HeroSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div>
           <SectionReveal>
-            <div className="inline-flex items-center gap-2 text-xs font-semibold text-brand-cta uppercase tracking-widest border border-[#CA6E23]/30 bg-[#CA6E23]/10 px-3 py-1.5 rounded-full mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-cta animate-pulse" />
-              WhatsApp · IA · Operação Comercial
-            </div>
             <h1 className="font-sora text-4xl md:text-5xl lg:text-6xl font-bold text-brand-text leading-tight">
               Transforme seu WhatsApp em uma{' '}
               <span className="gradient-text">máquina de vendas</span>{' '}
@@ -189,7 +184,6 @@ function MarketSection() {
     <section className="py-24 bg-brand-surface1">
       <div className="max-w-4xl mx-auto px-6 md:px-12 text-center">
         <SectionReveal>
-          <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-6">O mercado mudou</p>
           <h2 className="font-sora text-3xl md:text-4xl font-bold text-brand-text leading-tight mb-8">
             Ter IA no atendimento já não é diferencial.{' '}
             <span className="gradient-text">Ter uma operação integrada e mensurável é.</span>
@@ -217,7 +211,6 @@ function PainSection() {
     <section className="py-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <SectionReveal className="text-center mb-14">
-          <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">Diagnóstico</p>
           <h2 className="font-sora text-3xl md:text-4xl font-bold text-brand-text leading-tight max-w-3xl mx-auto">
             Sua empresa recebe mensagens. Mas a operação está preparada para transformar esse volume em receita?
           </h2>
@@ -256,7 +249,6 @@ function SolutionSection() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <SectionReveal>
-            <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">A Solução</p>
             <h2 className="font-sora text-3xl md:text-4xl font-bold text-brand-text leading-tight mb-4">
               Uma camada completa de atendimento, qualificação e{' '}
               <span className="gradient-text">operação comercial com IA.</span>
@@ -294,7 +286,6 @@ function HowItWorksSection() {
     <section className="py-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <SectionReveal className="text-center mb-14">
-          <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">Na Prática</p>
           <h2 className="font-sora text-3xl md:text-4xl font-bold text-brand-text">Como funciona na prática</h2>
         </SectionReveal>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -323,7 +314,6 @@ function DifferentialSection() {
     <section className="py-24 bg-brand-surface1">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <SectionReveal className="text-center mb-14">
-          <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">Diferencial</p>
           <h2 className="font-sora text-3xl md:text-4xl font-bold text-brand-text max-w-3xl mx-auto leading-tight">
             Por que nossa estrutura converte mais do que um "bot de atendimento" comum
           </h2>
@@ -355,7 +345,6 @@ function AgentsSection() {
     <section className="py-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <SectionReveal className="text-center mb-14">
-          <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">Multiagentes</p>
           <h2 className="font-sora text-3xl md:text-4xl font-bold text-brand-text max-w-3xl mx-auto leading-tight">
             Uma estrutura de multiagentes para cada etapa da operação
           </h2>
@@ -388,7 +377,6 @@ function IntegrationsSection() {
     <section className="py-24 bg-brand-surface1">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <SectionReveal className="text-center mb-14">
-          <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">Integrações</p>
           <h2 className="font-sora text-3xl md:text-4xl font-bold text-brand-text max-w-3xl mx-auto leading-tight">
             Integrado ao que sua operação precisa para funcionar de verdade
           </h2>
@@ -419,7 +407,6 @@ function DashboardSection() {
     <section className="py-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <SectionReveal className="text-center mb-14">
-          <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">Visibilidade</p>
           <h2 className="font-sora text-3xl md:text-4xl font-bold text-brand-text max-w-3xl mx-auto leading-tight">
             Um painel claro para enxergar o que realmente está acontecendo na operação
           </h2>
@@ -452,7 +439,6 @@ function AuthoritySection() {
     <section className="py-24 bg-brand-surface1">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <SectionReveal className="text-center mb-14">
-          <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">Para quem é</p>
           <h2 className="font-sora text-3xl md:text-4xl font-bold text-brand-text max-w-3xl mx-auto leading-tight">
             Projetado para empresas que precisam{' '}
             <span className="gradient-text">escalar com controle, eficiência e previsibilidade</span>
@@ -484,7 +470,6 @@ function OfferSection() {
     <section id="oferta" className="py-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <SectionReveal className="text-center mb-14">
-          <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">Planos</p>
           <h2 className="font-sora text-3xl md:text-4xl font-bold text-brand-text max-w-3xl mx-auto leading-tight">
             Implementamos de acordo com a maturidade e a operação da sua empresa
           </h2>
@@ -542,7 +527,6 @@ function FinalCTASection() {
       <div className="absolute bottom-0 left-0 right-0 h-px gradient-bg opacity-40" />
       <div className="relative max-w-3xl mx-auto px-6 md:px-12 text-center">
         <SectionReveal>
-          <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-6">Próximo passo</p>
           <h2 className="font-sora text-3xl md:text-5xl font-bold text-brand-text leading-tight mb-4">
             Se a sua empresa recebe volume, ela precisa de{' '}
             <span className="gradient-text">processo</span>{' '}

@@ -12,7 +12,6 @@ export default function SolucaoTemplate({ title, tag, description, whatIs, benef
         <div className="absolute inset-0 bg-gradient-to-b from-[#160907]/60 to-[#160907]" />
         <div className="relative max-w-7xl mx-auto px-6 md:px-12">
           <SectionReveal className="max-w-3xl">
-            <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">{tag}</p>
             <h1 className="font-sora text-4xl md:text-5xl lg:text-6xl font-bold text-brand-text leading-tight"
               dangerouslySetInnerHTML={{ __html: title }} />
             <p className="text-brand-muted text-lg mt-6 leading-relaxed">{description}</p>
@@ -29,7 +28,6 @@ export default function SolucaoTemplate({ title, tag, description, whatIs, benef
       <section className="py-20 bg-brand-surface1">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <SectionReveal>
-            <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">O que é</p>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <p className="text-brand-muted text-base leading-relaxed">{whatIs}</p>
@@ -50,7 +48,6 @@ export default function SolucaoTemplate({ title, tag, description, whatIs, benef
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <SectionReveal className="mb-12">
-            <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">Como funciona</p>
             <h2 className="font-sora text-2xl md:text-3xl font-semibold text-brand-text">Processo e entregáveis.</h2>
           </SectionReveal>
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -46,7 +46,6 @@ export default function Solucoes() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#160907]/60 to-[#160907]" />
         <div className="relative max-w-7xl mx-auto px-6 md:px-12 text-center">
           <SectionReveal>
-            <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">Ecossistema de Soluções</p>
             <h1 className="font-sora text-4xl md:text-5xl lg:text-6xl font-bold text-brand-text leading-tight">
               Um ecossistema para transformar{' '}
               <span className="gradient-text">crescimento em sistema.</span>

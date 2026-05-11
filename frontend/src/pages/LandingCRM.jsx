@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import SectionReveal, { StaggerContainer, StaggerItem } from '@/components/SectionReveal';
-import LeadForm from '@/components/LeadForm';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
@@ -39,7 +38,6 @@ export default function LandingCRM() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#160907]/80 to-[#160907]" />
         <div className="relative max-w-7xl mx-auto px-6 md:px-12">
           <div className="max-w-3xl">
-            <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">CRM & Base</p>
             <h1 className="font-sora text-4xl md:text-5xl lg:text-6xl font-bold text-brand-text leading-tight">
               CRM como{' '}
               <span className="gradient-text">motor de LTV:</span>{' '}
@@ -93,14 +91,17 @@ export default function LandingCRM() {
       </section>
 
       <section id="auditoria-crm" className="py-20 bg-brand-surface1">
-        <div className="max-w-2xl mx-auto px-6 md:px-12">
-          <SectionReveal className="text-center mb-8">
-            <h2 className="font-sora text-2xl md:text-3xl font-semibold text-brand-text">Auditar meu CRM</h2>
-            <p className="text-brand-subtle text-sm mt-2">Resposta em até 24h úteis.</p>
+        <div className="max-w-2xl mx-auto px-6 md:px-12 text-center">
+          <SectionReveal>
+            <h2 className="font-sora text-2xl md:text-3xl font-semibold text-brand-text mb-4">Auditar meu CRM</h2>
+            <p className="text-brand-subtle text-sm mb-8">Resposta em até 24h úteis.</p>
+            <Link to="/diagnostico"
+              data-testid="cta-crm-form"
+              className="inline-flex items-center justify-center gap-2 bg-brand-cta text-white font-semibold px-10 py-5 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.35)] text-base">
+              Auditar meu CRM <ArrowRight size={18} />
+            </Link>
+            <p className="text-brand-subtle text-xs mt-4">Sem spam. Seus dados ficam protegidos (LGPD).</p>
           </SectionReveal>
-          <div className="bg-[#160907] border border-[#3A231D] rounded-2xl p-8">
-            <LeadForm type="qualified" source="landing_crm" ctaLabel="Auditar meu CRM" />
-          </div>
         </div>
       </section>
 

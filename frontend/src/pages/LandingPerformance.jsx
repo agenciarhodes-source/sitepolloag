@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import SectionReveal, { StaggerContainer, StaggerItem } from '@/components/SectionReveal';
-import LeadForm from '@/components/LeadForm';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
@@ -42,7 +41,6 @@ export default function LandingPerformance() {
         <div className="relative max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">Mídia de Performance</p>
               <h1 className="font-sora text-4xl md:text-5xl lg:text-6xl font-bold text-brand-text leading-tight">
                 Performance com{' '}
                 <span className="gradient-text">ROI explicável:</span>{' '}
@@ -82,7 +80,6 @@ export default function LandingPerformance() {
       <section className="py-20 bg-brand-surface1">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <SectionReveal>
-            <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">Reconhece algum?</p>
             <h2 className="font-sora text-2xl md:text-3xl font-semibold text-brand-text mb-8">Sintomas de performance sem método.</h2>
           </SectionReveal>
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -102,7 +99,6 @@ export default function LandingPerformance() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <SectionReveal>
-            <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">O que fazemos</p>
             <h2 className="font-sora text-2xl md:text-3xl font-semibold text-brand-text mb-2">Auditoria de Performance — 14 dias.</h2>
             <p className="text-brand-subtle text-sm mb-8">O que você recebe:</p>
           </SectionReveal>
@@ -119,16 +115,19 @@ export default function LandingPerformance() {
         </div>
       </section>
 
-      {/* Formulário */}
+      {/* CTA */}
       <section id="auditoria" className="py-20 bg-brand-surface1">
-        <div className="max-w-2xl mx-auto px-6 md:px-12">
-          <SectionReveal className="text-center mb-8">
-            <h2 className="font-sora text-2xl md:text-3xl font-semibold text-brand-text">Pedir auditoria de performance</h2>
-            <p className="text-brand-subtle text-sm mt-2">Resposta em até 24h úteis.</p>
+        <div className="max-w-2xl mx-auto px-6 md:px-12 text-center">
+          <SectionReveal>
+            <h2 className="font-sora text-2xl md:text-3xl font-semibold text-brand-text mb-4">Pedir auditoria de performance</h2>
+            <p className="text-brand-subtle text-sm mb-8">Resposta em até 24h úteis.</p>
+            <Link to="/diagnostico"
+              data-testid="cta-performance-form"
+              className="inline-flex items-center justify-center gap-2 bg-brand-cta text-white font-semibold px-10 py-5 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.35)] text-base">
+              Pedir auditoria de performance <ArrowRight size={18} />
+            </Link>
+            <p className="text-brand-subtle text-xs mt-4">Sem spam. Seus dados ficam protegidos (LGPD).</p>
           </SectionReveal>
-          <div className="bg-[#160907] border border-[#3A231D] rounded-2xl p-8">
-            <LeadForm type="qualified" source="landing_performance" ctaLabel="Pedir auditoria de performance" />
-          </div>
         </div>
       </section>
 

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import CountUp from 'react-countup';
 import SectionReveal, { StaggerContainer, StaggerItem } from '@/components/SectionReveal';
-import LeadForm from '@/components/LeadForm';
 import {
   Accordion,
   AccordionContent,
@@ -92,16 +91,6 @@ function Hero() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="max-w-3xl"
         >
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-flex items-center gap-2 text-xs font-semibold text-brand-cta uppercase tracking-widest border border-[#CA6E23]/30 bg-[#CA6E23]/10 px-3 py-1.5 rounded-full mb-6"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-cta animate-pulse" />
-            IA-first · Human-in-the-loop
-          </motion.div>
-
           <h1 className="font-sora text-5xl md:text-6xl lg:text-7xl font-bold text-brand-text leading-[1.1] tracking-tight">
             Crescimento com{' '}
             <span className="gradient-text">previsibilidade</span>{' '}
@@ -155,7 +144,6 @@ function ProblemSection() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <SectionReveal>
-            <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-4">O Problema</p>
             <h2 className="font-sora text-3xl md:text-4xl font-semibold text-brand-text leading-tight">
               Crescer sem processo custa caro.
             </h2>
@@ -194,7 +182,6 @@ function PilarsSection() {
     <section id="solucoes" className="py-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <SectionReveal className="text-center mb-16">
-          <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-3">Ecossistema de Soluções</p>
           <h2 className="font-sora text-3xl md:text-4xl font-semibold text-brand-text">Três pilares, um sistema.</h2>
           <p className="text-brand-subtle text-base mt-3 max-w-xl mx-auto">
             Aquisição, conversão e retenção integradas — não canais isolados.
@@ -255,7 +242,6 @@ function MethodSection() {
     <section id="metodo" className="py-24 bg-brand-surface1">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <SectionReveal className="mb-16">
-          <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-3">Como Funciona</p>
           <h2 className="font-sora text-3xl md:text-4xl font-semibold text-brand-text">
             Método em 4 etapas.
           </h2>
@@ -289,7 +275,6 @@ function KPIsSection() {
     <section className="py-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <SectionReveal className="text-center mb-12">
-          <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-3">Resultados</p>
           <h2 className="font-sora text-3xl md:text-4xl font-semibold text-brand-text">Números que aparecem no board.</h2>
         </SectionReveal>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -322,7 +307,6 @@ function OfertaSection() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <SectionReveal>
-            <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-3">Oferta de Entrada</p>
             <h2 className="font-sora text-3xl md:text-4xl font-semibold text-brand-text leading-tight">
               Diagnóstico IA-first<br />
               <span className="gradient-text">em 7–10 dias.</span>
@@ -343,9 +327,15 @@ function OfertaSection() {
             </p>
           </SectionReveal>
           <SectionReveal delay={0.2}>
-            <div className="bg-[#160907] border border-[#3A231D] rounded-2xl p-8">
-              <h3 className="font-sora text-xl font-semibold text-brand-text mb-6">Solicitar diagnóstico</h3>
-              <LeadForm type="qualified" source="home_oferta" ctaLabel="Quero meu diagnóstico" />
+            <div className="bg-[#160907] border border-[#3A231D] rounded-2xl p-8 flex flex-col items-center text-center">
+              <h3 className="font-sora text-xl font-semibold text-brand-text mb-4">Agendar diagnóstico estratégico</h3>
+              <p className="text-brand-subtle text-sm mb-8">Começa com uma call de 30 min. Sem compromisso imediato.</p>
+              <Link to="/diagnostico"
+                data-testid="cta-home-oferta"
+                className="inline-flex items-center justify-center gap-2 bg-brand-cta text-white font-semibold px-10 py-5 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.35)] text-base w-full">
+                Quero meu diagnóstico <ArrowRight size={18} />
+              </Link>
+              <p className="text-brand-subtle text-xs mt-4">Sem spam. Seus dados ficam protegidos (LGPD).</p>
             </div>
           </SectionReveal>
         </div>
@@ -359,7 +349,6 @@ function FAQSection() {
     <section className="py-24">
       <div className="max-w-3xl mx-auto px-6 md:px-12">
         <SectionReveal className="text-center mb-12">
-          <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-3">Dúvidas</p>
           <h2 className="font-sora text-3xl md:text-4xl font-semibold text-brand-text">Perguntas frequentes.</h2>
         </SectionReveal>
         <Accordion type="single" collapsible className="space-y-3">

@@ -36,7 +36,6 @@ export default function Blog() {
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <SectionReveal className="mb-12">
-            <p className="text-xs font-semibold text-brand-cta uppercase tracking-widest mb-3">Conteúdos</p>
             <h1 className="font-sora text-4xl md:text-5xl font-bold text-brand-text">
               Insights práticos sobre{' '}
               <span className="gradient-text">IA, growth e CRM.</span>
