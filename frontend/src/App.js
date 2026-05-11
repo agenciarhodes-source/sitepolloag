@@ -21,6 +21,7 @@ import Diagnostico from "@/pages/Diagnostico";
 import LandingTrafegoPago from "@/pages/LandingTrafegoPago";
 import LandingWhatsApp from "@/pages/LandingWhatsApp";
 import LandingIA from "@/pages/LandingIA";
+import LandingRedes from "@/pages/LandingRedes";
 import Admin from "@/pages/Admin";
 
 function ScrollToTop() {
@@ -68,6 +69,7 @@ function App() {
             <Route path="/trafego-pago" element={<LandingTrafegoPago />} />
             <Route path="/whatsapp-ia" element={<LandingWhatsApp />} />
             <Route path="/ia-aplicada" element={<LandingIA />} />
+            <Route path="/redes-sociais" element={<LandingRedes />} />
             <Route path="/admin" element={<Admin />} />
           </Routes>
         </Layout>

@@ -13,6 +13,7 @@ const SOLUCOES_MAIN = [
 
 const SOLUCOES_LANDINGS = [
   { label: 'IA Aplicada ao Negócio', path: '/ia-aplicada', desc: 'Automação, copilots e governança' },
+  { label: 'Redes Sociais', path: '/redes-sociais', desc: 'Social media, conteúdo e produção' },
   { label: 'WhatsApp + IA', path: '/whatsapp-ia', desc: 'Operação comercial com multiagentes' },
   { label: 'Tráfego Pago', path: '/trafego-pago', desc: 'Google Ads + Meta Ads com IA' },
   { label: 'Mídia de Performance', path: '/performance', desc: 'Auditoria de performance' },
