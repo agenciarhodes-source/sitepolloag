@@ -7,9 +7,16 @@ import {
   Target, Calendar, BarChart2, Instagram
 } from 'lucide-react';
 
-/* ─── Helpers ─── */
-const WA = (msg) =>
-  `https://wa.me/5511999999999?text=${encodeURIComponent(msg)}`;
+/* ─── Links WhatsApp ─── */
+const WA_HERO    = 'https://wa.me/5586994849285?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20gest%C3%A3o%20de%20redes%20sociais';
+const WA_GESTAO  = 'https://wa.me/5586994849285?text=Ol%C3%A1!%20Tenho%20interesse%20na%20Gest%C3%A3o%20Estrat%C3%A9gica%20Completa';
+const WA_LINHA   = 'https://wa.me/5586994849285?text=Ol%C3%A1!%20Tenho%20interesse%20na%20Cria%C3%A7%C3%A3o%20de%20Linha%20Editorial';
+const WA_CAPTAC  = 'https://wa.me/5586994849285?text=Ol%C3%A1!%20Tenho%20interesse%20na%20Capta%C3%A7%C3%A3o%20de%20Conte%C3%BAdo';
+const WA_POSTS   = 'https://wa.me/5586994849285?text=Ol%C3%A1!%20Tenho%20interesse%20em%20Posts%20Avulsos';
+const WA_MIDIA   = 'https://wa.me/5586994849285?text=Ol%C3%A1!%20Tenho%20interesse%20na%20Confec%C3%A7%C3%A3o%20de%20M%C3%ADdia%20Kit';
+const WA_ANALISE = 'https://wa.me/5586994849285?text=Ol%C3%A1!%20Tenho%20interesse%20na%20An%C3%A1lise%20Estrat%C3%A9gica%20de%20Perfil';
+const WA_FINAL   = 'https://wa.me/5586994849285?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Pollo';
+const WA_GERAL   = WA_HERO;
 
 const GradientText = ({ children, className = '' }) => (
   <span
@@ -97,7 +104,7 @@ const SERVICOS = [
       'Análise de métricas e relatório com leitura estratégica',
       'Otimização contínua do perfil (bio, destaques, estrutura)',
     ],
-    waMsg: 'Olá! Tenho interesse na Gestão Estratégica Completa (Social Media). Pode me contar mais?',
+    waMsg: WA_GESTAO,
     cta: 'Quero saber mais',
   },
   {
@@ -116,7 +123,7 @@ const SERVICOS = [
       'Sugestões de roteiro, cenários, formatos e legendas',
       'Entrega única — postagem feita pelo cliente',
     ],
-    waMsg: 'Olá! Tenho interesse na Criação de Linha Editorial. Pode me dar mais detalhes?',
+    waMsg: WA_LINHA,
     cta: 'Quero saber mais',
   },
   {
@@ -135,7 +142,7 @@ const SERVICOS = [
       'Gravação no local, edição e envio em alta qualidade',
       'Se já tiver social media, conteúdo é planejado e postado',
     ],
-    waMsg: 'Olá! Tenho interesse no serviço de Captação de Conteúdo. Pode me dar mais detalhes?',
+    waMsg: WA_CAPTAC,
     cta: 'Quero saber mais',
   },
   {
@@ -154,7 +161,7 @@ const SERVICOS = [
       'Formatos: feed, Stories, apresentações, e-book',
       'Entrega via Drive — postagem feita pelo cliente',
     ],
-    waMsg: 'Olá! Tenho interesse em Posts Avulsos. Pode me passar as opções e valores?',
+    waMsg: WA_POSTS,
     cta: 'Quero saber mais',
   },
   {
@@ -172,7 +179,7 @@ const SERVICOS = [
       'Posicionamento, público e proposta de valor',
       'Organização dos dados para apresentação profissional',
     ],
-    waMsg: 'Olá! Tenho interesse na Confecção de Mídia Kit. Pode me dar mais detalhes?',
+    waMsg: WA_MIDIA,
     cta: 'Quero saber mais',
   },
   {
@@ -191,7 +198,7 @@ const SERVICOS = [
       'Leitura do conteúdo atual (o que funciona e por quê)',
       'Sugestões práticas via PDF + meeting de 1 hora',
     ],
-    waMsg: 'Olá! Tenho interesse na Análise Estratégica de Perfil. Como funciona?',
+    waMsg: WA_ANALISE,
     cta: 'Quero saber mais',
   },
 ];
@@ -223,7 +230,7 @@ function HeroSection() {
               style={{ background: '#CA6E23', color: '#FAF7F4', boxShadow: '0 0 30px rgba(202,110,35,0.35)' }}>
               Ver Serviços <ArrowRight size={18} />
             </a>
-            <a href={WA('Olá! Gostaria de falar com um especialista sobre gestão de redes sociais da pollo.ag.')}
+            <a href={WA_HERO}
               target="_blank" rel="noopener noreferrer"
               data-testid="hero-cta-redes-secondary"
               className="inline-flex items-center justify-center gap-2 font-medium px-8 py-4 rounded-full border transition-all duration-300 hover:bg-[#3A231D]/30"
@@ -420,7 +427,7 @@ function ServicoCard({ s }) {
         {s.priceNote && <p className="text-xs italic mt-1" style={{ color: '#B9ABA4' }}>{s.priceNote}</p>}
       </div>
 
-      <a href={WA(s.waMsg)} target="_blank" rel="noopener noreferrer"
+      <a href={s.waMsg} target="_blank" rel="noopener noreferrer"
         data-testid={`cta-redes-${s.id}`}
         className="inline-flex items-center justify-center gap-2 font-semibold text-sm py-3.5 px-6 rounded-full transition-all duration-300"
         style={s.featured
@@ -465,7 +472,7 @@ function ServicosSection() {
         <SectionReveal className="mt-10 text-center">
           <p className="text-sm" style={{ color: '#B9ABA4' }}>
             Não sabe qual serviço é ideal para você?{' '}
-            <a href={WA('Olá! Gostaria de entender qual serviço da pollo.ag faz mais sentido para mim agora.')}
+            <a href={WA_GERAL}
               target="_blank" rel="noopener noreferrer"
               className="font-semibold underline underline-offset-2 hover:opacity-80 transition-opacity"
               style={{ color: '#CA6E23' }}>
@@ -496,7 +503,7 @@ function FinalCTASection() {
               Não sabe qual serviço é ideal para você? Vamos conversar e encontrar a melhor solução para o momento do seu negócio.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href={WA('Olá! Quero entender melhor os serviços da pollo.ag e qual faz sentido para minha empresa.')}
+              <a href={WA_FINAL}
                 target="_blank" rel="noopener noreferrer"
                 data-testid="final-cta-redes-primary"
                 className="inline-flex items-center justify-center gap-2 font-bold px-10 py-5 rounded-full hover:brightness-110 transition-all duration-300 text-base"
