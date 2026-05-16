@@ -99,7 +99,6 @@ const PACKAGES = [
       'Dashboard BI personalizado',
       'Automação de funil (n8n + WhatsApp)',
       'Reunião quinzenal de estratégia',
-      'Gestor de conta dedicado',
     ],
     cta: 'Quero dominar',
     highlight: false,
@@ -322,19 +321,10 @@ function PackagesSection() {
                     </span>
                   </div>
                 )}
-                <div className="mb-5">
+                <div className="mb-6">
                   <span className="text-xs font-semibold text-brand-subtle uppercase tracking-widest">{pkg.audience}</span>
                   <h3 className="font-sora text-2xl font-bold text-brand-text mt-1">{pkg.name}</h3>
                   <p className="text-brand-subtle text-sm mt-2 leading-relaxed">{pkg.desc}</p>
-                </div>
-                <div className={`mb-6 pb-6 border-b ${pkg.highlight ? 'border-[#CA6E23]/30' : 'border-[#3A231D]'}`}>
-                  <div className="flex items-baseline gap-1.5">
-                    <span className={`font-sora text-3xl font-bold ${pkg.highlight ? 'gradient-text' : 'text-brand-text'}`}>
-                      {pkg.price}
-                    </span>
-                    <span className="text-brand-subtle text-xs">/mês</span>
-                  </div>
-                  <p className="text-brand-subtle text-xs mt-1.5">{pkg.minMedia}</p>
                 </div>
                 <ul className="space-y-2.5 flex-1 mb-8">
                   {pkg.items.map((item) => (

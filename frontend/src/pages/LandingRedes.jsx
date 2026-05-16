@@ -419,13 +419,6 @@ function ServicoCard({ s }) {
         ))}
       </ul>
 
-      <div className="pt-4 mb-5" style={{ borderTop: '1px solid #3A231D' }}>
-        <div className="flex items-baseline gap-1">
-          <span className="font-sora font-bold text-2xl" style={{ color: '#CA6E23' }}>{s.price}</span>
-          {s.period && <span className="text-xs font-medium" style={{ color: '#B9ABA4' }}>{s.period}</span>}
-        </div>
-        {s.priceNote && <p className="text-xs italic mt-1" style={{ color: '#B9ABA4' }}>{s.priceNote}</p>}
-      </div>
 
       <a href={s.waMsg} target="_blank" rel="noopener noreferrer"
         data-testid={`cta-redes-${s.id}`}
