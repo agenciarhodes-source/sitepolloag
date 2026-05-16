@@ -117,7 +117,6 @@ const COMPARE_ROWS = [
   { feature: 'Dashboard BI', starter: '—', growth: '—', scale: '✓' },
   { feature: 'Automação de funil', starter: '—', growth: '—', scale: '✓' },
   { feature: 'Reunião de alinhamento', starter: '—', growth: 'Mensal', scale: 'Quinzenal' },
-  { feature: 'Gestor dedicado', starter: '—', growth: '—', scale: '✓' },
 ];
 
 const RESULTS = [
@@ -301,9 +300,6 @@ function PackagesSection() {
           <h2 className="font-sora text-3xl md:text-4xl font-bold text-brand-text max-w-2xl mx-auto leading-tight">
             Escolha o plano ideal para o seu momento
           </h2>
-          <p className="text-brand-subtle text-sm mt-4 max-w-xl mx-auto">
-            Os valores referem-se ao <strong className="text-brand-muted">fee de gestão mensal</strong>. A verba de mídia é investida diretamente nas plataformas e definida em conjunto conforme seus objetivos.
-          </p>
         </SectionReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
@@ -350,15 +346,6 @@ function PackagesSection() {
           ))}
         </div>
 
-        <SectionReveal className="mt-8 text-center">
-          <div className="inline-flex items-start gap-3 bg-[#1E0D0A] border border-[#3A231D] rounded-xl px-6 py-4 max-w-3xl text-left">
-            <Shield size={18} className="text-brand-cta flex-shrink-0 mt-0.5" />
-            <p className="text-brand-subtle text-xs leading-relaxed">
-              <span className="text-brand-muted font-medium">Importante: </span>
-              Os valores acima referem-se ao fee de gestão (trabalho estratégico + operação). A verba de mídia é investida diretamente nas plataformas e não passa pela agência. Em 2026, o fee de gestão no mercado brasileiro varia entre R$ 1.500 e R$ 20.000/mês dependendo do escopo.
-            </p>
-          </div>
-        </SectionReveal>
       </div>
     </section>
   );
