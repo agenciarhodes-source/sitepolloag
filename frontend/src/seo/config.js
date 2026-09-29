@@ -109,7 +109,7 @@ export const ORGANIZATION_SCHEMA = {
   name: SITE.name,
   alternateName: SITE.legalName,
   url: SITE.url,
-  logo: `${SITE.url}/logo512.png`,
+  logo: `${SITE.url}/icon-512.png`,
   image: `${SITE.url}${SITE.ogImage}`,
   telephone: SITE.phone,
   email: SITE.email,
