@@ -8,7 +8,7 @@ const SOLUCOES = [
     title: 'IA-first & Automações',
     desc: 'Reduza retrabalho e tempo de resposta com automação inteligente. Human-in-the-loop com governança e qualidade.',
     tags: ['Automação de processos', 'IA aplicada', 'Integração de sistemas'],
-    to: '/solucoes/ia-first',
+    to: '/ia-aplicada',
     color: '#CA6E23',
   },
   {
@@ -16,7 +16,7 @@ const SOLUCOES = [
     title: 'Growth & Performance',
     desc: 'Aquisição eficiente + CRO com rotina semanal de testes. ROI explicável, não campanhas no escuro.',
     tags: ['Mídia paga', 'CRO', 'Tracking'],
-    to: '/solucoes/growth-performance',
+    to: '/trafego-pago',
     color: '#A34E1B',
   },
   {
@@ -24,7 +24,7 @@ const SOLUCOES = [
     title: 'SEO & Conteúdo',
     desc: 'Demanda orgânica com método: arquitetura, clusters e páginas money para alimentar o pipeline.',
     tags: ['SEO técnico', 'Conteúdo estratégico', 'Cluster editorial'],
-    to: '/solucoes/seo-conteudo',
+    to: '/seo',
     color: '#8C3A11',
   },
   {
@@ -32,7 +32,7 @@ const SOLUCOES = [
     title: 'CRM & Base (LTV/Churn)',
     desc: 'Ativação, retenção e reativação para elevar LTV e reduzir churn. CRM como motor de receita recorrente.',
     tags: ['Segmentação', 'Jornadas', 'Retenção'],
-    to: '/solucoes/crm-base',
+    to: '/crm',
     color: '#CA6E23',
   },
 ];
@@ -45,7 +45,7 @@ export default function Solucoes() {
           style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1759956445608-32eef0f19208?crop=entropy&cs=srgb&fm=jpg&q=85)' }} />
         <div className="absolute inset-0 bg-gradient-to-b from-[#160907]/60 to-[#160907]" />
         <div className="relative max-w-7xl mx-auto px-6 md:px-12 text-center">
-          <SectionReveal>
+          <SectionReveal instant>
             <h1 className="font-sora text-4xl md:text-5xl lg:text-6xl font-bold text-brand-text leading-tight">
               Um ecossistema para transformar{' '}
               <span className="gradient-text">crescimento em sistema.</span>

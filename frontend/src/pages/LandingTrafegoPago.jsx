@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import SectionReveal, { StaggerContainer, StaggerItem } from '@/components/SectionReveal';
-import CountUp from 'react-countup';
+import CountUp from '@/components/CountUp';
 import {
   TrendingUp, Target, Zap, BarChart2, CheckCircle, ArrowRight,
   Star, Shield, Cpu, Activity, ChevronRight, Users, Database, Layers
@@ -137,7 +137,7 @@ function HeroSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div>
-          <SectionReveal>
+          <SectionReveal instant>
             <h1 className="font-sora text-4xl md:text-5xl lg:text-6xl font-bold text-brand-text leading-tight">
               Tráfego Pago que gera{' '}
               <span className="gradient-text">resultado real.</span>

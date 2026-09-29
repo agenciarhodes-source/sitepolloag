@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Seo from '@/seo/Seo';
+import NotFound from '@/pages/NotFound';
 import { ArrowLeft, Calendar, Tag, User } from 'lucide-react';
 
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+const BACKEND = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND}/api`;
 
 function formatDate(dateStr) {
   if (!dateStr) return '';
@@ -18,17 +21,13 @@ export default function BlogPost() {
   const [error, setError] = useState(false);
 
   useEffect(() => {
+    if (!BACKEND) { setError(true); setLoading(false); return; }
     axios.get(`${API}/blog/posts/${slug}`)
-      .then((r) => setPost(r.data))
+      .then((r) => (r.data && typeof r.data === 'object' && r.data.title ? setPost(r.data) : setError(true)))
       .catch(() => setError(true))
       .finally(() => setLoading(false));
   }, [slug]);
 
-  useEffect(() => {
-    if (post) {
-      document.title = post.seo_title || `${post.title} | pollo.ag`;
-    }
-  }, [post]);
 
   if (loading) {
     return (
@@ -38,17 +37,28 @@ export default function BlogPost() {
     );
   }
 
-  if (error || !post) {
-    return (
-      <div className="pt-20 min-h-screen flex flex-col items-center justify-center gap-4">
-        <p className="text-brand-muted text-lg">Post não encontrado.</p>
-        <Link to="/conteudos" className="text-brand-cta hover:underline text-sm">Voltar ao blog</Link>
-      </div>
-    );
-  }
+  if (error || !post) return <NotFound />;
 
   return (
     <div data-testid="blog-post-page" className="pt-20">
+      <Seo
+        path={`/conteudos/${post.slug || slug}`}
+        title={post.seo_title || `${post.title} | pollo.ag`}
+        description={post.seo_description || post.excerpt || ''}
+        image={post.cover_image && post.cover_image.startsWith('/') ? post.cover_image : undefined}
+        schema={{
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: post.title,
+          description: post.seo_description || post.excerpt || '',
+          datePublished: post.created_at,
+          dateModified: post.updated_at || post.created_at,
+          author: { '@type': 'Organization', name: post.author || 'pollo.ag' },
+          publisher: { '@id': 'https://agenciapollo.com.br/#organization' },
+          mainEntityOfPage: `https://agenciapollo.com.br/conteudos/${post.slug || slug}`,
+          ...(post.cover_image ? { image: post.cover_image } : {}),
+        }}
+      />
       {post.cover_image && (
         <div className="relative h-64 md:h-80 overflow-hidden">
           <img src={post.cover_image} alt={post.title} className="w-full h-full object-cover" />

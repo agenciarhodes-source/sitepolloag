@@ -1,45 +1,99 @@
 import "@/App.css";
-import { useEffect } from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect, lazy, Suspense } from "react";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Home from "@/pages/Home";
-import Solucoes from "@/pages/Solucoes";
-import SolucaoIA from "@/pages/SolucaoIA";
-import SolucaoGrowth from "@/pages/SolucaoGrowth";
-import SolucaoSEOPage from "@/pages/SolucaoSEOPage";
-import SolucaoCRM from "@/pages/SolucaoCRM";
-import LandingPerformance from "@/pages/LandingPerformance";
-import LandingSEO from "@/pages/LandingSEO";
-import LandingCRM from "@/pages/LandingCRM";
-import Metodo from "@/pages/Metodo";
-import Blog from "@/pages/Blog";
-import BlogPost from "@/pages/BlogPost";
-import Sobre from "@/pages/Sobre";
-import Contato from "@/pages/Contato";
-import Diagnostico from "@/pages/Diagnostico";
-import LandingTrafegoPago from "@/pages/LandingTrafegoPago";
-import LandingWhatsApp from "@/pages/LandingWhatsApp";
-import LandingIA from "@/pages/LandingIA";
-import LandingRedes from "@/pages/LandingRedes";
-import Admin from "@/pages/Admin";
+import Seo from "@/seo/Seo";
+import { ROUTE_META, SITE, ORGANIZATION_SCHEMA } from "@/seo/config";
+
+// Cada página vira um pacote separado: o visitante só baixa o JavaScript da página aberta.
+// lazyPage guarda o módulo carregado: com preload() antes do primeiro render (index.js),
+// a página aparece direto, sem piscar o fallback por cima do HTML pré-renderizado.
+function lazyPage(loader) {
+  let Loaded = null;
+  const load = () => loader().then((m) => { Loaded = m.default; return m; });
+  const Lazy = lazy(load);
+  const Page = (props) => (Loaded ? <Loaded {...props} /> : <Lazy {...props} />);
+  Page.preload = load;
+  return Page;
+}
+
+const Home = lazyPage(() => import("@/pages/Home"));
+const Solucoes = lazyPage(() => import("@/pages/Solucoes"));
+const LandingSEO = lazyPage(() => import("@/pages/LandingSEO"));
+const LandingCRM = lazyPage(() => import("@/pages/LandingCRM"));
+const Metodo = lazyPage(() => import("@/pages/Metodo"));
+const Blog = lazyPage(() => import("@/pages/Blog"));
+const BlogPost = lazyPage(() => import("@/pages/BlogPost"));
+const Sobre = lazyPage(() => import("@/pages/Sobre"));
+const Contato = lazyPage(() => import("@/pages/Contato"));
+const Diagnostico = lazyPage(() => import("@/pages/Diagnostico"));
+const LandingTrafegoPago = lazyPage(() => import("@/pages/LandingTrafegoPago"));
+const LandingWhatsApp = lazyPage(() => import("@/pages/LandingWhatsApp"));
+const LandingIA = lazyPage(() => import("@/pages/LandingIA"));
+const LandingRedes = lazyPage(() => import("@/pages/LandingRedes"));
+const NotFound = lazyPage(() => import("@/pages/NotFound"));
+
+// Páginas antigas que disputavam o mesmo termo: redirecionadas para a página principal do serviço.
+// O .htaccess faz o mesmo com 301 no servidor.
+export const REDIRECTS = {
+  "/performance": "/trafego-pago",
+  "/solucoes/growth-performance": "/trafego-pago",
+  "/solucoes/ia-first": "/ia-aplicada",
+  "/solucoes/crm-base": "/crm",
+  "/solucoes/seo-conteudo": "/seo",
+};
+
+// Página a pré-carregar para cada rota (usado no index.js antes do primeiro render).
+const ROUTE_PAGES = {
+  "/": Home, "/solucoes": Solucoes, "/seo": LandingSEO, "/crm": LandingCRM, "/metodo": Metodo,
+  "/conteudos": Blog, "/sobre": Sobre, "/contato": Contato, "/diagnostico": Diagnostico,
+  "/trafego-pago": LandingTrafegoPago, "/whatsapp-ia": LandingWhatsApp, "/ia-aplicada": LandingIA,
+  "/redes-sociais": LandingRedes,
+};
+
+export function preloadRoute(pathname) {
+  const path = pathname.length > 1 ? pathname.replace(/\/+$/, "") : "/";
+  if (REDIRECTS[path]) return Promise.resolve();
+  const page = ROUTE_PAGES[path] || (path.startsWith("/conteudos/") ? BlogPost : NotFound);
+  return page.preload().catch(() => {});
+}
 
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
+    window.scrollTo({ top: 0, behavior: "instant" });
   }, [pathname]);
   return null;
 }
 
+function RouteSeo() {
+  const { pathname } = useLocation();
+  const path = pathname.length > 1 ? pathname.replace(/\/+$/, "") : "/";
+  const meta = ROUTE_META[path];
+  if (!meta) return null; // 404 e posts do blog definem o próprio SEO
+
+  const schema = [ORGANIZATION_SCHEMA];
+  if (path !== "/") {
+    schema.push({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Início", item: `${SITE.url}/` },
+        { "@type": "ListItem", position: 2, name: meta.title.split(" | ")[0].split(" — ")[0], item: `${SITE.url}${path}` },
+      ],
+    });
+  }
+  return <Seo path={path} {...meta} schema={schema} />;
+}
+
 function Layout({ children }) {
-  const location = useLocation();
-  const isAdmin = location.pathname.startsWith('/admin');
   return (
     <>
-      {!isAdmin && <Navbar />}
+      <RouteSeo />
+      <Navbar />
       <main>{children}</main>
-      {!isAdmin && <Footer />}
+      <Footer />
     </>
   );
 }
@@ -50,28 +104,28 @@ function App() {
       <BrowserRouter>
         <ScrollToTop />
         <Layout>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/solucoes" element={<Solucoes />} />
-            <Route path="/solucoes/ia-first" element={<SolucaoIA />} />
-            <Route path="/solucoes/growth-performance" element={<SolucaoGrowth />} />
-            <Route path="/solucoes/seo-conteudo" element={<SolucaoSEOPage />} />
-            <Route path="/solucoes/crm-base" element={<SolucaoCRM />} />
-            <Route path="/performance" element={<LandingPerformance />} />
-            <Route path="/seo" element={<LandingSEO />} />
-            <Route path="/crm" element={<LandingCRM />} />
-            <Route path="/metodo" element={<Metodo />} />
-            <Route path="/conteudos" element={<Blog />} />
-            <Route path="/conteudos/:slug" element={<BlogPost />} />
-            <Route path="/sobre" element={<Sobre />} />
-            <Route path="/contato" element={<Contato />} />
-            <Route path="/diagnostico" element={<Diagnostico />} />
-            <Route path="/trafego-pago" element={<LandingTrafegoPago />} />
-            <Route path="/whatsapp-ia" element={<LandingWhatsApp />} />
-            <Route path="/ia-aplicada" element={<LandingIA />} />
-            <Route path="/redes-sociais" element={<LandingRedes />} />
-            <Route path="/admin" element={<Admin />} />
-          </Routes>
+          <Suspense fallback={<div className="min-h-screen" />}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/solucoes" element={<Solucoes />} />
+              <Route path="/seo" element={<LandingSEO />} />
+              <Route path="/crm" element={<LandingCRM />} />
+              <Route path="/metodo" element={<Metodo />} />
+              <Route path="/conteudos" element={<Blog />} />
+              <Route path="/conteudos/:slug" element={<BlogPost />} />
+              <Route path="/sobre" element={<Sobre />} />
+              <Route path="/contato" element={<Contato />} />
+              <Route path="/diagnostico" element={<Diagnostico />} />
+              <Route path="/trafego-pago" element={<LandingTrafegoPago />} />
+              <Route path="/whatsapp-ia" element={<LandingWhatsApp />} />
+              <Route path="/ia-aplicada" element={<LandingIA />} />
+              <Route path="/redes-sociais" element={<LandingRedes />} />
+              {Object.entries(REDIRECTS).map(([from, to]) => (
+                <Route key={from} path={from} element={<Navigate to={to} replace />} />
+              ))}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
         </Layout>
       </BrowserRouter>
     </div>

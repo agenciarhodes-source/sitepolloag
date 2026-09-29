@@ -1,6 +1,7 @@
 import SectionReveal from '@/components/SectionReveal';
 import LeadForm from '@/components/LeadForm';
-import { Mail, MessageSquare } from 'lucide-react';
+import { Mail, MessageSquare, MapPin } from 'lucide-react';
+import { SITE, whatsappLink } from '@/seo/config';
 
 export default function Contato() {
   return (
@@ -8,7 +9,7 @@ export default function Contato() {
       <section className="py-28">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <SectionReveal>
+            <SectionReveal instant>
               <h1 className="font-sora text-4xl md:text-5xl font-bold text-brand-text leading-tight">
                 Fale com{' '}
                 <span className="gradient-text">um especialista.</span>
@@ -20,11 +21,17 @@ export default function Contato() {
               <div className="space-y-4 mt-10">
                 <div className="flex items-center gap-3 text-brand-muted text-sm">
                   <Mail size={18} className="text-brand-cta" />
-                  <span>contato@pollo.ag</span>
+                  <a href={`mailto:${SITE.email}`} className="hover:text-brand-cta transition-colors">{SITE.email}</a>
                 </div>
                 <div className="flex items-center gap-3 text-brand-muted text-sm">
                   <MessageSquare size={18} className="text-brand-cta" />
-                  <span>WhatsApp disponível após primeiro contato</span>
+                  <a href={whatsappLink('Olá! Vim pelo site da pollo.ag.')} target="_blank" rel="noopener noreferrer" className="hover:text-brand-cta transition-colors">
+                    WhatsApp {SITE.phoneDisplay}
+                  </a>
+                </div>
+                <div className="flex items-center gap-3 text-brand-muted text-sm">
+                  <MapPin size={18} className="text-brand-cta" />
+                  <span>{SITE.city} – {SITE.region} · Atendimento em todo o Brasil</span>
                 </div>
               </div>
 

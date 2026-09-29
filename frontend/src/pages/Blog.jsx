@@ -4,7 +4,8 @@ import axios from 'axios';
 import SectionReveal, { StaggerContainer, StaggerItem } from '@/components/SectionReveal';
 import { ArrowRight, Calendar, Tag } from 'lucide-react';
 
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+const BACKEND = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND}/api`;
 
 const CATEGORIES = ['Todos', 'IA-first', 'Performance', 'SEO', 'CRM', 'Operações'];
 
@@ -20,8 +21,12 @@ export default function Blog() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (!BACKEND) { setLoading(false); return; }
     axios.get(`${API}/blog/posts?published_only=true`)
-      .then((r) => { setPosts(r.data); setFiltered(r.data); })
+      .then((r) => {
+        const list = Array.isArray(r.data) ? r.data : [];
+        setPosts(list); setFiltered(list);
+      })
       .catch(() => {})
       .finally(() => setLoading(false));
   }, []);
@@ -35,7 +40,7 @@ export default function Blog() {
     <div data-testid="blog-page" className="pt-20">
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <SectionReveal className="mb-12">
+          <SectionReveal instant className="mb-12">
             <h1 className="font-sora text-4xl md:text-5xl font-bold text-brand-text">
               Insights práticos sobre{' '}
               <span className="gradient-text">IA, growth e CRM.</span>

@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import CountUp from 'react-countup';
+import CountUp from '@/components/CountUp';
 import SectionReveal, { StaggerContainer, StaggerItem } from '@/components/SectionReveal';
 import {
   Accordion,
@@ -16,19 +16,19 @@ const PILLARS = [
     icon: Zap,
     title: 'IA-first & Automações',
     desc: 'Reduza retrabalho e tempo de resposta com automação inteligente e governança humana no centro.',
-    to: '/solucoes/ia-first',
+    to: '/ia-aplicada',
   },
   {
     icon: TrendingUp,
     title: 'Growth & Performance',
     desc: 'Aquisição + CRO com rotina de teste semanal. Tráfego com ROI explicável, não campanhas no escuro.',
-    to: '/solucoes/growth-performance',
+    to: '/trafego-pago',
   },
   {
     icon: Database,
     title: 'CRM & Base',
     desc: 'Ativação, retenção e reativação para elevar LTV e reduzir churn. CRM como motor de receita.',
-    to: '/solucoes/crm-base',
+    to: '/crm',
   },
 ];
 
@@ -86,7 +86,7 @@ function Hero() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-32 pt-40">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="max-w-3xl"

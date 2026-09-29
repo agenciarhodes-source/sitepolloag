@@ -1,0 +1,58 @@
+# pollo.ag — Apache (Hostinger). Copiado para build/ pelo scripts/prerender.mjs.
+Options -MultiViews -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # www → domínio sem www
+  RewriteCond %{HTTP_HOST} ^www\.agenciapollo\.com\.br$ [NC]
+  RewriteRule ^ https://agenciapollo.com.br%{REQUEST_URI} [L,R=301]
+
+  # HTTPS (considera o Cloudflare na frente)
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Páginas consolidadas (mesmo serviço, uma URL só)
+  RewriteRule ^performance/?$ /trafego-pago [L,R=301]
+  RewriteRule ^solucoes/growth-performance/?$ /trafego-pago [L,R=301]
+  RewriteRule ^solucoes/ia-first/?$ /ia-aplicada [L,R=301]
+  RewriteRule ^solucoes/crm-base/?$ /crm [L,R=301]
+  RewriteRule ^solucoes/seo-conteudo/?$ /seo [L,R=301]
+
+  # /pagina.html e /pagina/ → /pagina
+  RewriteCond %{THE_REQUEST} \s/+([^?\s]+?)\.html[\s?] [NC]
+  RewriteCond %1 !^(index|404)$
+  RewriteRule ^ /%1 [L,R=301]
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.+)/$ /$1 [L,R=301]
+
+  # /pagina → pagina.html (HTML pré-renderizado)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+)$ $1.html [L]
+  # O resto cai no 404.html com status 404 (ErrorDocument acima)
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+  # js/css/fontes têm hash no nome (build/static): cache longo
+  <FilesMatch "\.(js|css|woff2?)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(png|jpe?g|webp|svg|ico)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml text/xml application/xml text/plain
+</IfModule>

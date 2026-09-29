@@ -128,7 +128,7 @@ function HeroSection() {
       <div className="absolute top-0 left-0 right-0 h-px gradient-bg opacity-60" />
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div>
-          <SectionReveal>
+          <SectionReveal instant>
             <h1 className="font-sora text-4xl md:text-5xl lg:text-6xl font-bold text-brand-text leading-tight">
               Transforme seu WhatsApp em uma{' '}
               <span className="gradient-text">máquina de vendas</span>{' '}

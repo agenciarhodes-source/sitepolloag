@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SectionReveal, { StaggerContainer, StaggerItem } from '@/components/SectionReveal';
-import CountUp from 'react-countup';
+import CountUp from '@/components/CountUp';
 import {
   ArrowRight, CheckCircle, ChevronDown, Zap, Database, Bot, BarChart2,
   Shield, Users, Cpu, Activity, Star, AlertCircle, Clock, RefreshCw,
@@ -203,7 +203,7 @@ function HeroSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div>
-          <SectionReveal>
+          <SectionReveal instant>
             <h1 className="font-sora text-4xl md:text-5xl lg:text-6xl font-bold text-brand-text leading-tight">
               IA que{' '}
               <span className="gradient-text">resolve processo</span>{' '}
@@ -644,7 +644,7 @@ function FinalCTASection() {
               className="inline-flex items-center justify-center gap-2 bg-brand-cta text-white font-bold px-10 py-5 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_40px_rgba(202,110,35,0.4)] text-base">
               Quero otimizar meus processos <ArrowRight size={20} />
             </Link>
-            <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/5586994849285" target="_blank" rel="noopener noreferrer"
               data-testid="final-cta-ia-whatsapp"
               className="inline-flex items-center justify-center gap-2 border border-[#3A231D] text-brand-muted hover:bg-[#3A231D]/30 hover:text-brand-text font-medium px-10 py-5 rounded-full transition-all duration-300 text-base">
               Falar com especialista

@@ -5,20 +5,16 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 
 const SOLUCOES_MAIN = [
   { label: 'Hub de Soluções', path: '/solucoes', desc: 'Visão completa do ecossistema' },
-  { label: 'IA-first & Automações', path: '/solucoes/ia-first', desc: 'Reduza retrabalho com IA' },
-  { label: 'Growth & Performance', path: '/solucoes/growth-performance', desc: 'Aquisição + CRO com rotina' },
-  { label: 'SEO & Conteúdo', path: '/solucoes/seo-conteudo', desc: 'Demanda orgânica com método' },
-  { label: 'CRM & Base', path: '/solucoes/crm-base', desc: 'LTV, churn e reativação' },
+  { label: 'Tráfego Pago', path: '/trafego-pago', desc: 'Meta Ads + Google Ads com IA' },
+  { label: 'Redes Sociais', path: '/redes-sociais', desc: 'Social media, conteúdo e produção' },
+  { label: 'WhatsApp + IA', path: '/whatsapp-ia', desc: 'Operação comercial com multiagentes' },
+  { label: 'IA Aplicada ao Negócio', path: '/ia-aplicada', desc: 'Automação, copilots e governança' },
 ];
 
 const SOLUCOES_LANDINGS = [
-  { label: 'IA Aplicada ao Negócio', path: '/ia-aplicada', desc: 'Automação, copilots e governança' },
-  { label: 'Redes Sociais', path: '/redes-sociais', desc: 'Social media, conteúdo e produção' },
-  { label: 'WhatsApp + IA', path: '/whatsapp-ia', desc: 'Operação comercial com multiagentes' },
-  { label: 'Tráfego Pago', path: '/trafego-pago', desc: 'Google Ads + Meta Ads com IA' },
-  { label: 'Mídia de Performance', path: '/performance', desc: 'Auditoria de performance' },
-  { label: 'SEO', path: '/seo', desc: 'Diagnóstico SEO' },
-  { label: 'CRM', path: '/crm', desc: 'Auditoria de CRM' },
+  { label: 'CRM', path: '/crm', desc: 'Auditoria e implantação de CRM' },
+  { label: 'SEO', path: '/seo', desc: 'Diagnóstico SEO e conteúdo' },
+  { label: 'Diagnóstico', path: '/diagnostico', desc: 'Onde está o gargalo do crescimento' },
 ];
 
 export default function Navbar() {
@@ -83,7 +79,7 @@ export default function Navbar() {
                     className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-72 bg-[#1E0D0A] border border-[#3A231D] rounded-xl shadow-2xl overflow-hidden"
                   >
                     <div className="p-2">
-                      <p className="text-xs font-semibold text-brand-subtle uppercase tracking-widest px-3 py-2">Soluções</p>
+                      <p className="text-xs font-semibold text-brand-subtle uppercase tracking-widest px-3 py-2">Serviços</p>
                       {SOLUCOES_MAIN.map((item) => (
                         <Link
                           key={item.path}
@@ -96,7 +92,7 @@ export default function Navbar() {
                         </Link>
                       ))}
                       <div className="border-t border-[#3A231D] my-2" />
-                      <p className="text-xs font-semibold text-brand-subtle uppercase tracking-widest px-3 py-2">Landings</p>
+                      <p className="text-xs font-semibold text-brand-subtle uppercase tracking-widest px-3 py-2">Auditorias e diagnóstico</p>
                       {SOLUCOES_LANDINGS.map((item) => (
                         <Link
                           key={item.path}
@@ -130,6 +126,8 @@ export default function Navbar() {
             <button
               data-testid="mobile-menu-toggle"
               onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label={mobileOpen ? 'Fechar menu' : 'Abrir menu'}
+              aria-expanded={mobileOpen}
               className="md:hidden text-brand-text p-2"
             >
               {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -150,10 +148,12 @@ export default function Navbar() {
               {[
                 { to: '/', label: 'Home' },
                 { to: '/solucoes', label: 'Soluções' },
+                { to: '/trafego-pago', label: 'Tráfego Pago' },
+                { to: '/redes-sociais', label: 'Redes Sociais' },
+                { to: '/whatsapp-ia', label: 'WhatsApp + IA' },
                 { to: '/ia-aplicada', label: 'IA Aplicada ao Negócio' },
-                { to: '/performance', label: 'Mídia de Performance' },
-                { to: '/seo', label: 'SEO' },
                 { to: '/crm', label: 'CRM' },
+                { to: '/seo', label: 'SEO' },
                 { to: '/metodo', label: 'Método' },
                 { to: '/conteudos', label: 'Blog' },
                 { to: '/sobre', label: 'Sobre' },

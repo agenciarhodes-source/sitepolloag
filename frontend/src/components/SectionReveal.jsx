@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
 
-export default function SectionReveal({ children, className = '', delay = 0, direction = 'up' }) {
+export default function SectionReveal({ children, className = '', delay = 0, direction = 'up', instant = false }) {
+  // Conteúdo acima da dobra (hero) aparece sem animação: melhora o LCP e o SEO.
+  if (instant) return <div className={className}>{children}</div>;
+
   const variants = {
     up: { hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0 } },
     left: { hidden: { opacity: 0, x: -40 }, visible: { opacity: 1, x: 0 } },

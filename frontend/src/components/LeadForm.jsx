@@ -1,8 +1,23 @@
 import { useState } from 'react';
 import { CheckCircle, Loader } from 'lucide-react';
-import axios from 'axios';
+import { whatsappLink } from '@/seo/config';
+import { trackEvent } from '@/lib/analytics';
 
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+// Destino dos leads: webhook (ex.: n8n) definido em REACT_APP_LEAD_WEBHOOK_URL no build.
+// Sem webhook, ou se ele falhar, o lead segue pelo WhatsApp com os dados já preenchidos.
+const LEAD_WEBHOOK = process.env.REACT_APP_LEAD_WEBHOOK_URL;
+
+const LABELS = {
+  name: 'Nome', company: 'Empresa', email: 'E-mail', whatsapp: 'WhatsApp', role: 'Cargo',
+  meta_90: 'Meta 90 dias', commercial_team: 'Time comercial', current_stack: 'Stack atual', avg_ticket: 'Ticket médio',
+};
+
+function buildWhatsappMessage(form, source) {
+  const lines = Object.entries(LABELS)
+    .filter(([k]) => form[k])
+    .map(([k, label]) => `${label}: ${form[k]}`);
+  return `Olá! Vim pelo site da pollo.ag (${source}).\n${lines.join('\n')}`;
+}
 
 const META_OPTIONS = [
   'Aumentar conversão',
@@ -30,6 +45,7 @@ export default function LeadForm({ type = 'short', source = 'site', ctaLabel = '
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
+  const [viaWhatsapp, setViaWhatsapp] = useState('');
 
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -40,22 +56,47 @@ export default function LeadForm({ type = 'short', source = 'site', ctaLabel = '
     e.preventDefault();
     if (!form.email.includes('@')) { setError('Verifique o formato do email.'); return; }
     setLoading(true);
-    try {
-      await axios.post(`${API}/leads`, { ...form, source });
-      setSuccess(true);
-    } catch {
-      setError('Erro ao enviar. Tente novamente.');
-    } finally {
-      setLoading(false);
+    let sent = false;
+    if (LEAD_WEBHOOK) {
+      try {
+        const res = await fetch(LEAD_WEBHOOK, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ...form, source, page: window.location.pathname, sent_at: new Date().toISOString() }),
+        });
+        sent = res.ok;
+      } catch {
+        sent = false;
+      }
     }
+    if (!sent) {
+      const link = whatsappLink(buildWhatsappMessage(form, source));
+      window.open(link, '_blank', 'noopener'); // se o navegador bloquear, o botão abaixo resolve
+      setViaWhatsapp(link);
+    }
+    trackEvent('generate_lead', { form_source: source, method: sent ? 'webhook' : 'whatsapp' });
+    setSuccess(true);
+    setLoading(false);
   };
 
   if (success) {
     return (
       <div data-testid="lead-form-success" className="flex flex-col items-center gap-4 py-10 text-center">
         <CheckCircle className="text-brand-cta" size={48} />
-        <h3 className="font-sora text-xl font-semibold text-brand-text">Recebido. Próximo passo: alinhamento rápido.</h3>
-        <p className="text-brand-subtle text-sm max-w-sm">Em até 24h úteis, enviamos um horário para uma call de 30 min.</p>
+        <h3 className="font-sora text-xl font-semibold text-brand-text">
+          {viaWhatsapp ? 'Quase lá: confirme no WhatsApp.' : 'Recebido. Próximo passo: alinhamento rápido.'}
+        </h3>
+        <p className="text-brand-subtle text-sm max-w-sm">
+          {viaWhatsapp
+            ? 'Abrimos uma conversa com seus dados preenchidos. É só tocar em enviar.'
+            : 'Em até 24h úteis, enviamos um horário para uma call de 30 min.'}
+        </p>
+        {viaWhatsapp && (
+          <a href={viaWhatsapp} target="_blank" rel="noopener noreferrer"
+            className="bg-brand-cta text-white font-semibold px-6 py-3 rounded-full hover:brightness-125 transition-all">
+            Abrir WhatsApp
+          </a>
+        )}
       </div>
     );
   }

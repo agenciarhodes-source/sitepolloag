@@ -1,24 +1,23 @@
 import { Link } from 'react-router-dom';
-import { Linkedin, Instagram, ArrowRight } from 'lucide-react';
+import { ArrowRight, Mail, MessageSquare, MapPin } from 'lucide-react';
+import { SITE, whatsappLink } from '@/seo/config';
 
 const LINKS = {
   solucoes: [
-    { label: 'IA-first & Automações', to: '/solucoes/ia-first' },
-    { label: 'Growth & Performance', to: '/solucoes/growth-performance' },
-    { label: 'SEO & Conteúdo', to: '/solucoes/seo-conteudo' },
-    { label: 'CRM & Base', to: '/solucoes/crm-base' },
+    { label: 'Tráfego Pago', to: '/trafego-pago' },
+    { label: 'Redes Sociais', to: '/redes-sociais' },
+    { label: 'WhatsApp com IA', to: '/whatsapp-ia' },
+    { label: 'IA Aplicada', to: '/ia-aplicada' },
+    { label: 'CRM', to: '/crm' },
+    { label: 'SEO', to: '/seo' },
   ],
   empresa: [
+    { label: 'Soluções', to: '/solucoes' },
     { label: 'Método', to: '/metodo' },
-    { label: 'Blog', to: '/conteudos' },
     { label: 'Sobre', to: '/sobre' },
+    { label: 'Blog', to: '/conteudos' },
+    { label: 'Diagnóstico', to: '/diagnostico' },
     { label: 'Contato', to: '/contato' },
-  ],
-  landings: [
-    { label: 'Mídia de Performance', to: '/performance' },
-    { label: 'SEO', to: '/seo' },
-    { label: 'CRM', to: '/crm' },
-    { label: 'Diagnóstico IA-first', to: '/diagnostico' },
   ],
 };
 
@@ -30,20 +29,12 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <span className="font-sora font-bold text-2xl"><span className="text-white">pollo</span><span className="gradient-text">.ag</span></span>
             <p className="text-brand-subtle text-sm mt-4 leading-relaxed max-w-xs">
-              Transformamos crescimento em previsibilidade com um motor IA-first que une aquisição, conversão e retenção.
+              Agência de marketing de performance em Teresina – PI. Tráfego pago, CRM, redes sociais e automação com IA para empresas de todo o Brasil.
             </p>
-            <div className="flex gap-4 mt-6">
-              <a href="#" aria-label="LinkedIn" className="w-9 h-9 rounded-lg border border-[#3A231D] flex items-center justify-center text-brand-subtle hover:text-brand-cta hover:border-brand-cta transition-colors">
-                <Linkedin size={16} />
-              </a>
-              <a href="#" aria-label="Instagram" className="w-9 h-9 rounded-lg border border-[#3A231D] flex items-center justify-center text-brand-subtle hover:text-brand-cta hover:border-brand-cta transition-colors">
-                <Instagram size={16} />
-              </a>
-            </div>
           </div>
 
           <div>
-            <p className="text-xs font-semibold text-brand-subtle uppercase tracking-widest mb-4">Soluções</p>
+            <p className="text-xs font-semibold text-brand-subtle uppercase tracking-widest mb-4">Serviços</p>
             <ul className="space-y-3">
               {LINKS.solucoes.map((item) => (
                 <li key={item.to}>
@@ -65,13 +56,21 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="text-xs font-semibold text-brand-subtle uppercase tracking-widest mb-4">Landings</p>
-            <ul className="space-y-3">
-              {LINKS.landings.map((item) => (
-                <li key={item.to}>
-                  <Link to={item.to} className="text-sm text-brand-muted hover:text-brand-cta transition-colors">{item.label}</Link>
-                </li>
-              ))}
+            <p className="text-xs font-semibold text-brand-subtle uppercase tracking-widest mb-4">Contato</p>
+            <ul className="space-y-3 text-sm text-brand-muted">
+              <li>
+                <a href={whatsappLink('Olá! Vim pelo site da pollo.ag.')} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-brand-cta transition-colors">
+                  <MessageSquare size={14} className="text-brand-cta" /> {SITE.phoneDisplay}
+                </a>
+              </li>
+              <li>
+                <a href={`mailto:${SITE.email}`} className="inline-flex items-center gap-2 hover:text-brand-cta transition-colors text-[13px] whitespace-nowrap">
+                  <Mail size={14} className="text-brand-cta shrink-0" /> {SITE.email}
+                </a>
+              </li>
+              <li className="inline-flex items-center gap-2">
+                <MapPin size={14} className="text-brand-cta" /> {SITE.city} – {SITE.region}
+              </li>
             </ul>
           </div>
         </div>
