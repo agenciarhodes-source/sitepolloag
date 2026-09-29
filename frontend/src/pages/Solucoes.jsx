@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import SectionReveal, { StaggerContainer, StaggerItem } from '@/components/SectionReveal';
 import { ArrowRight, ChevronRight, Zap, TrendingUp, Database, Search } from 'lucide-react';
+import { CTA_URL } from '@/seo/config';
 
 const SOLUCOES = [
   {
@@ -53,13 +54,10 @@ export default function Solucoes() {
             <p className="text-brand-muted text-lg mt-6 max-w-2xl mx-auto leading-relaxed">
               Não vendemos canais isolados. Construímos um motor integrado de aquisição, conversão e retenção.
             </p>
-            <Link
-              to="/diagnostico"
-              data-testid="solucoes-cta"
-              className="mt-8 inline-flex items-center gap-2 bg-brand-cta text-white font-semibold px-8 py-4 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.3)]"
-            >
+            <a href={CTA_URL} target="_blank" rel="noopener noreferrer" data-testid="solucoes-cta"
+              className="mt-8 inline-flex items-center gap-2 bg-brand-cta text-white font-semibold px-8 py-4 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.3)]">
               Quero diagnóstico <ArrowRight size={18} />
-            </Link>
+            </a>
           </SectionReveal>
         </div>
       </section>
@@ -112,12 +110,9 @@ export default function Solucoes() {
             <p className="text-brand-subtle text-base mt-3 mb-8 max-w-lg mx-auto">
               O diagnóstico mapeia toda a operação e indica quais soluções fazem mais sentido para o seu momento.
             </p>
-            <Link
-              to="/diagnostico"
-              className="inline-flex items-center gap-2 bg-brand-cta text-white font-semibold px-8 py-4 rounded-full hover:brightness-125 transition-all duration-300"
-            >
+            <a href={CTA_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-brand-cta text-white font-semibold px-8 py-4 rounded-full hover:brightness-125 transition-all duration-300">
               Quero meu diagnóstico <ArrowRight size={18} />
-            </Link>
+            </a>
           </SectionReveal>
         </div>
       </section>

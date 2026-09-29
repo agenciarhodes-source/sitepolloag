@@ -4,6 +4,7 @@ import axios from 'axios';
 import Seo from '@/seo/Seo';
 import NotFound from '@/pages/NotFound';
 import { ArrowLeft, Calendar, Tag, User } from 'lucide-react';
+import { CTA_URL } from '@/seo/config';
 
 const BACKEND = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND}/api`;
@@ -100,12 +101,9 @@ export default function BlogPost() {
         />
 
         <div className="mt-12 pt-8 border-t border-[#3A231D]">
-          <Link
-            to="/diagnostico"
-            className="inline-flex items-center gap-2 bg-brand-cta text-white font-semibold px-8 py-4 rounded-lg hover:brightness-125 transition-all duration-300"
-          >
+          <a href={CTA_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-brand-cta text-white font-semibold px-8 py-4 rounded-lg hover:brightness-125 transition-all duration-300">
             Quero meu diagnóstico
-          </Link>
+          </a>
         </div>
       </div>
     </div>

@@ -4,6 +4,7 @@ import { CheckCircle, ArrowRight } from 'lucide-react';
 import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
 } from '@/components/ui/accordion';
+import { CTA_URL } from '@/seo/config';
 
 const DELIVERABLES = [
   'Auditoria técnica: Core Web Vitals, indexação, estrutura',
@@ -39,7 +40,7 @@ export default function LandingSEO() {
               Arquitetura, conteúdo e intenção comercial — sem "conteúdo por conteúdo".
             </p>
             <div className="flex gap-4 mt-8">
-              <a href="#diagnostico-seo" className="inline-flex items-center gap-2 bg-brand-cta text-white font-semibold px-8 py-4 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.3)]">
+              <a href={CTA_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-brand-cta text-white font-semibold px-8 py-4 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.3)]">
                 Quero diagnóstico SEO <ArrowRight size={18} />
               </a>
             </div>
@@ -90,11 +91,10 @@ export default function LandingSEO() {
           <SectionReveal>
             <h2 className="font-sora text-2xl md:text-3xl font-semibold text-brand-text mb-4">Quero diagnóstico SEO</h2>
             <p className="text-brand-subtle text-sm mb-8">Resposta em até 24h úteis.</p>
-            <Link to="/diagnostico"
-              data-testid="cta-seo-form"
+            <a href={CTA_URL} target="_blank" rel="noopener noreferrer" data-testid="cta-seo-form"
               className="inline-flex items-center justify-center gap-2 bg-brand-cta text-white font-semibold px-10 py-5 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.35)] text-base">
               Quero diagnóstico SEO <ArrowRight size={18} />
-            </Link>
+            </a>
             <p className="text-brand-subtle text-xs mt-4">Sem spam. Seus dados ficam protegidos (LGPD).</p>
           </SectionReveal>
         </div>

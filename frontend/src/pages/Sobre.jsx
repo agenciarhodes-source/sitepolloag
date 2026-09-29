@@ -1,6 +1,7 @@
 import SectionReveal, { StaggerContainer, StaggerItem } from '@/components/SectionReveal';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import { CTA_URL } from '@/seo/config';
 
 const PRINCIPLES = [
   { title: 'Clareza executiva', desc: 'O que foi feito, por quê, e qual impacto esperado. Sem relatórios opacos.' },
@@ -113,9 +114,9 @@ export default function Sobre() {
                 </ul>
               </div>
             </div>
-            <Link to="/diagnostico" className="mt-8 inline-flex items-center gap-2 bg-brand-cta text-white font-semibold px-8 py-4 rounded-full hover:brightness-125 transition-all duration-300">
+            <a href={CTA_URL} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex items-center gap-2 bg-brand-cta text-white font-semibold px-8 py-4 rounded-full hover:brightness-125 transition-all duration-300">
               Quero meu diagnóstico <ArrowRight size={18} />
-            </Link>
+            </a>
           </SectionReveal>
         </div>
       </section>

@@ -10,6 +10,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { ArrowRight, Zap, TrendingUp, Database, CheckCircle, ChevronRight, MessageSquare } from 'lucide-react';
+import { CTA_URL } from '@/seo/config';
 
 const PILLARS = [
   {
@@ -107,13 +108,10 @@ function Hero() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="flex flex-col sm:flex-row gap-4 mt-10"
           >
-            <Link
-              to="/diagnostico"
-              data-testid="hero-cta-primary"
-              className="inline-flex items-center justify-center gap-2 bg-brand-cta text-white font-semibold px-8 py-4 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.3)] text-base"
-            >
+            <a href={CTA_URL} target="_blank" rel="noopener noreferrer" data-testid="hero-cta-primary"
+              className="inline-flex items-center justify-center gap-2 bg-brand-cta text-white font-semibold px-8 py-4 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.3)] text-base">
               Quero meu diagnóstico <ArrowRight size={18} />
-            </Link>
+            </a>
             <Link
               to="/metodo"
               data-testid="hero-cta-secondary"
@@ -327,11 +325,10 @@ function OfertaSection() {
           <SectionReveal delay={0.2}>
             <div className="bg-[#160907] border border-[#3A231D] rounded-2xl p-8 flex flex-col items-center text-center">
               <h3 className="font-sora text-xl font-semibold text-brand-text mb-6">Agendar diagnóstico estratégico</h3>
-              <Link to="/diagnostico"
-                data-testid="cta-home-oferta"
+              <a href={CTA_URL} target="_blank" rel="noopener noreferrer" data-testid="cta-home-oferta"
                 className="inline-flex items-center justify-center gap-2 bg-brand-cta text-white font-semibold px-10 py-5 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.35)] text-base w-full">
                 Quero meu diagnóstico <ArrowRight size={18} />
-              </Link>
+              </a>
               <p className="text-brand-subtle text-xs mt-4">Sem spam. Seus dados ficam protegidos (LGPD).</p>
             </div>
           </SectionReveal>
@@ -384,19 +381,13 @@ function CTABanner() {
             Em 7–10 dias, você sabe onde está o gargalo e o que fazer a seguir.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-            <Link
-              to="/diagnostico"
-              data-testid="cta-banner-primary"
-              className="inline-flex items-center justify-center gap-2 bg-brand-cta text-white font-semibold px-10 py-4 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.3)] text-base"
-            >
+            <a href={CTA_URL} target="_blank" rel="noopener noreferrer" data-testid="cta-banner-primary"
+              className="inline-flex items-center justify-center gap-2 bg-brand-cta text-white font-semibold px-10 py-4 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.3)] text-base">
               Quero meu diagnóstico <ArrowRight size={18} />
-            </Link>
-            <Link
-              to="/contato"
-              className="inline-flex items-center justify-center gap-2 border border-[#3A231D] text-brand-muted hover:bg-[#3A231D]/30 font-medium px-8 py-4 rounded-full transition-all duration-300 text-base"
-            >
+            </a>
+            <a href={CTA_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 border border-[#3A231D] text-brand-muted hover:bg-[#3A231D]/30 font-medium px-8 py-4 rounded-full transition-all duration-300 text-base">
               Falar com especialista
-            </Link>
+            </a>
           </div>
         </SectionReveal>
       </div>

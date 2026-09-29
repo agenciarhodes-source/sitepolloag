@@ -4,6 +4,7 @@ import { CheckCircle, ArrowRight } from 'lucide-react';
 import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
 } from '@/components/ui/accordion';
+import { CTA_URL } from '@/seo/config';
 
 const CRM_FAILS = [
   'Base parada — nenhuma ação de reativação em meses',
@@ -46,7 +47,7 @@ export default function LandingCRM() {
             <p className="text-brand-muted text-lg mt-6 leading-relaxed">
               Segmentação + jornadas + automação para reduzir churn e elevar ticket.
             </p>
-            <a href="#auditoria-crm" className="mt-8 inline-flex items-center gap-2 bg-brand-cta text-white font-semibold px-8 py-4 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.3)]">
+            <a href={CTA_URL} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex items-center gap-2 bg-brand-cta text-white font-semibold px-8 py-4 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.3)]">
               Auditar meu CRM <ArrowRight size={18} />
             </a>
           </div>
@@ -95,11 +96,10 @@ export default function LandingCRM() {
           <SectionReveal>
             <h2 className="font-sora text-2xl md:text-3xl font-semibold text-brand-text mb-4">Auditar meu CRM</h2>
             <p className="text-brand-subtle text-sm mb-8">Resposta em até 24h úteis.</p>
-            <Link to="/diagnostico"
-              data-testid="cta-crm-form"
+            <a href={CTA_URL} target="_blank" rel="noopener noreferrer" data-testid="cta-crm-form"
               className="inline-flex items-center justify-center gap-2 bg-brand-cta text-white font-semibold px-10 py-5 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.35)] text-base">
               Auditar meu CRM <ArrowRight size={18} />
-            </Link>
+            </a>
             <p className="text-brand-subtle text-xs mt-4">Sem spam. Seus dados ficam protegidos (LGPD).</p>
           </SectionReveal>
         </div>

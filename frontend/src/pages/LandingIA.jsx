@@ -7,6 +7,7 @@ import {
   Shield, Users, Cpu, Activity, Star, AlertCircle, Clock, RefreshCw,
   MessageSquare, FileText, GitBranch, Layers, Target, TrendingUp, Lock
 } from 'lucide-react';
+import { CTA_URL } from '@/seo/config';
 
 /* ─── DADOS ─── */
 
@@ -227,11 +228,10 @@ function HeroSection() {
             </ul>
 
             <div className="flex flex-col sm:flex-row gap-4 mt-10">
-              <Link to="/diagnostico"
-                data-testid="hero-cta-ia-primary"
+              <a href={CTA_URL} target="_blank" rel="noopener noreferrer" data-testid="hero-cta-ia-primary"
                 className="inline-flex items-center justify-center gap-2 bg-brand-cta text-white font-semibold px-8 py-4 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.35)] text-base">
                 Quero otimizar meus processos <ArrowRight size={18} />
-              </Link>
+              </a>
               <a href="#como-funciona"
                 data-testid="hero-cta-ia-secondary"
                 className="inline-flex items-center justify-center gap-2 border border-[#3A231D] text-brand-muted hover:bg-[#3A231D]/30 hover:text-brand-text font-medium px-8 py-4 rounded-full transition-all duration-300 text-base">
@@ -332,10 +332,9 @@ function SignalsSection() {
               Esses sinais têm solução — e ela não exige trocar toda a operação.{' '}
               <span className="gradient-text font-semibold">Começa com diagnóstico, evolui com método.</span>
             </p>
-            <Link to="/diagnostico"
-              className="mt-5 inline-flex items-center gap-2 bg-brand-cta text-white font-semibold px-7 py-3.5 rounded-full hover:brightness-125 transition-all duration-300 text-sm">
+            <a href={CTA_URL} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 bg-brand-cta text-white font-semibold px-7 py-3.5 rounded-full hover:brightness-125 transition-all duration-300 text-sm">
               Agendar diagnóstico gratuito <ArrowRight size={16} />
-            </Link>
+            </a>
           </div>
         </SectionReveal>
       </div>
@@ -556,15 +555,14 @@ function PackagesSection() {
                     </p>
                   ))}
                 </div>
-                <Link to="/diagnostico"
-                  data-testid={`pkg-cta-ia-${pkg.id}`}
+                <a href={CTA_URL} target="_blank" rel="noopener noreferrer" data-testid={`pkg-cta-ia-${pkg.id}`}
                   className={`w-full text-center font-semibold py-4 rounded-full hover:brightness-125 transition-all duration-300 text-sm ${
                     pkg.highlight
                       ? 'bg-brand-cta text-white shadow-[0_0_20px_rgba(202,110,35,0.3)]'
                       : 'border border-[#3A231D] text-brand-muted hover:text-brand-text hover:bg-[#3A231D]/30'
                   }`}>
                   {pkg.cta}
-                </Link>
+                </a>
               </div>
             </SectionReveal>
           ))}
@@ -639,12 +637,11 @@ function FinalCTASection() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-            <Link to="/diagnostico"
-              data-testid="final-cta-ia-primary"
+            <a href={CTA_URL} target="_blank" rel="noopener noreferrer" data-testid="final-cta-ia-primary"
               className="inline-flex items-center justify-center gap-2 bg-brand-cta text-white font-bold px-10 py-5 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_40px_rgba(202,110,35,0.4)] text-base">
               Quero otimizar meus processos <ArrowRight size={20} />
-            </Link>
-            <a href="https://wa.me/5586994849285" target="_blank" rel="noopener noreferrer"
+            </a>
+            <a href={CTA_URL} target="_blank" rel="noopener noreferrer"
               data-testid="final-cta-ia-whatsapp"
               className="inline-flex items-center justify-center gap-2 border border-[#3A231D] text-brand-muted hover:bg-[#3A231D]/30 hover:text-brand-text font-medium px-10 py-5 rounded-full transition-all duration-300 text-base">
               Falar com especialista

@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import { CTA_URL } from '@/seo/config';
 
 const SOLUCOES_MAIN = [
   { label: 'Hub de Soluções', path: '/solucoes', desc: 'Visão completa do ecossistema' },
@@ -116,13 +117,10 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center gap-4">
-            <Link
-              to="/diagnostico"
-              data-testid="nav-cta-btn"
-              className="hidden md:inline-flex items-center bg-brand-cta text-white font-semibold text-sm px-5 py-2.5 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_20px_rgba(202,110,35,0.25)]"
-            >
+            <a href={CTA_URL} target="_blank" rel="noopener noreferrer" data-testid="nav-cta-btn"
+              className="hidden md:inline-flex items-center bg-brand-cta text-white font-semibold text-sm px-5 py-2.5 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_20px_rgba(202,110,35,0.25)]">
               Diagnóstico
-            </Link>
+            </a>
             <button
               data-testid="mobile-menu-toggle"
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -167,13 +165,10 @@ export default function Navbar() {
                   {item.label}
                 </Link>
               ))}
-              <Link
-                to="/diagnostico"
-                data-testid="mobile-cta-btn"
-                className="mt-4 w-full text-center bg-brand-cta text-white font-semibold py-3.5 rounded-full hover:brightness-125 transition-all"
-              >
+              <a href={CTA_URL} target="_blank" rel="noopener noreferrer" data-testid="mobile-cta-btn"
+                className="mt-4 w-full text-center bg-brand-cta text-white font-semibold py-3.5 rounded-full hover:brightness-125 transition-all">
                 Quero meu diagnóstico
-              </Link>
+              </a>
             </div>
           </motion.div>
         )}

@@ -5,6 +5,7 @@ import {
   TrendingUp, Target, Zap, BarChart2, CheckCircle, ArrowRight,
   Star, Shield, Cpu, Activity, ChevronRight, Users, Database, Layers
 } from 'lucide-react';
+import { CTA_URL } from '@/seo/config';
 
 /* ─── DADOS ─── */
 
@@ -151,11 +152,10 @@ function HeroSection() {
                 className="inline-flex items-center justify-center gap-2 bg-brand-cta text-white font-semibold px-8 py-4 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.35)] text-base">
                 Ver Pacotes <ArrowRight size={18} />
               </a>
-              <Link to="/diagnostico"
-                data-testid="hero-cta-tp-secondary"
+              <a href={CTA_URL} target="_blank" rel="noopener noreferrer" data-testid="hero-cta-tp-secondary"
                 className="inline-flex items-center justify-center gap-2 border border-[#3A231D] text-brand-muted hover:bg-[#3A231D]/30 hover:text-brand-text font-medium px-8 py-4 rounded-full transition-all duration-300 text-base">
                 Falar com especialista
-              </Link>
+              </a>
             </div>
           </SectionReveal>
         </div>
@@ -330,17 +330,14 @@ function PackagesSection() {
                     </li>
                   ))}
                 </ul>
-                <Link
-                  to="/diagnostico"
-                  data-testid={`pkg-cta-${pkg.id}`}
+                <a href={CTA_URL} target="_blank" rel="noopener noreferrer" data-testid={`pkg-cta-${pkg.id}`}
                   className={`w-full text-center font-semibold py-4 rounded-full hover:brightness-125 transition-all duration-300 text-sm ${
                     pkg.highlight
                       ? 'bg-brand-cta text-white shadow-[0_0_20px_rgba(202,110,35,0.3)]'
                       : 'border border-[#3A231D] text-brand-muted hover:text-brand-text hover:bg-[#3A231D]/30'
-                  }`}
-                >
+                  }`}>
                   {pkg.cta}
-                </Link>
+                </a>
               </div>
             </SectionReveal>
           ))}
@@ -472,13 +469,10 @@ function FinalCTASection() {
 
           <SectionReveal delay={0.2}>
             <div className="flex flex-col items-center lg:items-start gap-6">
-              <Link
-                to="/diagnostico"
-                data-testid="final-cta-tp-btn"
-                className="inline-flex items-center justify-center gap-3 bg-brand-cta text-white font-bold px-10 py-5 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_40px_rgba(202,110,35,0.4)] text-lg w-full lg:w-auto"
-              >
+              <a href={CTA_URL} target="_blank" rel="noopener noreferrer" data-testid="final-cta-tp-btn"
+                className="inline-flex items-center justify-center gap-3 bg-brand-cta text-white font-bold px-10 py-5 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_40px_rgba(202,110,35,0.4)] text-lg w-full lg:w-auto">
                 Agendar diagnóstico gratuito <ArrowRight size={20} />
-              </Link>
+              </a>
               <p className="text-brand-subtle text-xs text-center lg:text-left">
                 Sem spam. Seus dados ficam protegidos (LGPD).
               </p>

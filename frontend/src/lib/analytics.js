@@ -11,10 +11,12 @@ export function initAnalytics() {
   window.gtag = function gtag() { window.dataLayer.push(arguments); };
   window.gtag('js', new Date());
   window.gtag('config', GA_ID);
-  // Cliques em links de WhatsApp em qualquer página
+  // Cliques em WhatsApp e nos botões de CTA (chat FlipForm) em qualquer página
   document.addEventListener('click', (e) => {
-    const a = e.target.closest && e.target.closest('a[href*="wa.me"]');
-    if (a) trackEvent('click_whatsapp', { link_url: a.href, page_path: window.location.pathname });
+    const a = e.target.closest && e.target.closest('a[href*="wa.me"], a[href*="app.flipform.com.br"]');
+    if (!a) return;
+    const name = a.href.includes('wa.me') ? 'click_whatsapp' : 'click_cta';
+    trackEvent(name, { link_url: a.href, link_text: (a.innerText || '').trim().slice(0, 60), page_path: window.location.pathname });
   });
 }
 

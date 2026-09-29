@@ -29,9 +29,12 @@ export default function Contato() {
                     WhatsApp {SITE.phoneDisplay}
                   </a>
                 </div>
-                <div className="flex items-center gap-3 text-brand-muted text-sm">
-                  <MapPin size={18} className="text-brand-cta" />
-                  <span>{SITE.city} – {SITE.region} · Atendimento em todo o Brasil</span>
+                <div className="flex items-start gap-3 text-brand-muted text-sm">
+                  <MapPin size={18} className="text-brand-cta shrink-0" />
+                  <address className="not-italic leading-relaxed">
+                    {SITE.street} · Caixa Postal {SITE.poBox}<br />
+                    {SITE.city} – {SITE.region} · Atendimento em todo o Brasil
+                  </address>
                 </div>
               </div>
 

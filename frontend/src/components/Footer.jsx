@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Mail, MessageSquare, MapPin } from 'lucide-react';
-import { SITE, whatsappLink } from '@/seo/config';
+import { SITE, whatsappLink, CTA_URL } from '@/seo/config';
 
 const LINKS = {
   solucoes: [
@@ -64,12 +64,15 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href={`mailto:${SITE.email}`} className="inline-flex items-center gap-2 hover:text-brand-cta transition-colors text-[13px] whitespace-nowrap">
-                  <Mail size={14} className="text-brand-cta shrink-0" /> {SITE.email}
+                <a href={`mailto:${SITE.email}`} className="inline-flex items-center gap-2 hover:text-brand-cta transition-colors text-[13px]">
+                  <Mail size={14} className="text-brand-cta shrink-0" /> <span>{SITE.email.split('@')[0]}@<wbr />{SITE.email.split('@')[1]}</span>
                 </a>
               </li>
-              <li className="inline-flex items-center gap-2">
-                <MapPin size={14} className="text-brand-cta" /> {SITE.city} – {SITE.region}
+              <li className="flex items-start gap-2">
+                <MapPin size={14} className="text-brand-cta mt-1 shrink-0" />
+                <address className="not-italic leading-relaxed">
+                  {SITE.street}<br />Caixa Postal {SITE.poBox}<br />{SITE.city} – {SITE.region}
+                </address>
               </li>
             </ul>
           </div>
@@ -79,9 +82,9 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
               <p className="text-xs text-brand-subtle">© {new Date().getFullYear()} pollo.ag. Todos os direitos reservados.</p>
-              <Link to="/diagnostico" className="inline-flex items-center gap-2 text-brand-cta text-sm font-medium hover:underline">
+              <a href={CTA_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-brand-cta text-sm font-medium hover:underline">
                 Quero meu diagnóstico <ArrowRight size={14} />
-              </Link>
+              </a>
             </div>
             <p className="text-xs text-brand-subtle text-center md:text-right">
               Sem spam. Seus dados ficam protegidos (LGPD).

@@ -1,6 +1,7 @@
 import SectionReveal, { StaggerContainer, StaggerItem } from '@/components/SectionReveal';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import { CTA_URL } from '@/seo/config';
 
 const METHOD_STEPS = [
   {
@@ -135,9 +136,9 @@ export default function Metodo() {
           <SectionReveal>
             <h2 className="font-sora text-2xl md:text-3xl font-semibold text-brand-text mb-4">Pronto para começar?</h2>
             <p className="text-brand-subtle text-sm mb-8">O método começa com um diagnóstico. Call de 30 min, sem compromisso.</p>
-            <Link to="/diagnostico" className="inline-flex items-center gap-2 bg-brand-cta text-white font-semibold px-8 py-4 rounded-full hover:brightness-125 transition-all duration-300">
+            <a href={CTA_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-brand-cta text-white font-semibold px-8 py-4 rounded-full hover:brightness-125 transition-all duration-300">
               Quero meu diagnóstico <ArrowRight size={18} />
-            </Link>
+            </a>
           </SectionReveal>
         </div>
       </section>

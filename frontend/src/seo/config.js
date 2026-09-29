@@ -6,15 +6,21 @@ export const SITE = {
   name: 'pollo.ag',
   legalName: 'Agência Pollo',
   phone: '+55 86 99484-9285',
-  phoneDisplay: '(86) 99484-9285',
+  phoneDisplay: '(86) 9 9484-9285',
   whatsapp: '5586994849285',
-  email: 'contato@agenciapollo.com.br',
+  email: 'atendimento@agenciapollo.com.br',
+  street: 'Av. Homero Castelo Branco, 1956 – Sala 01',
+  poBox: '1095',
+  addressDisplay: 'Av. Homero Castelo Branco, 1956 – Sala 01 · Caixa Postal 1095',
   city: 'Teresina',
   region: 'PI',
   ogImage: '/og-image.png',
   // Preencher quando os perfis oficiais estiverem definidos (aparecem no rodapé e no schema).
   sameAs: [],
 };
+
+// Destino de todos os botões de chamada para ação (CTA) do site.
+export const CTA_URL = 'https://app.flipform.com.br/chat/helena-meta-app-review';
 
 export const whatsappLink = (text) =>
   `https://wa.me/${SITE.whatsapp}${text ? `?text=${encodeURIComponent(text)}` : ''}`;
@@ -80,7 +86,7 @@ export const ROUTE_META = {
   '/contato': {
     title: `Contato — pollo.ag, Teresina ${SITE.phoneDisplay}`,
     description:
-      'Fale com um especialista da pollo.ag pelo WhatsApp (86) 99484-9285 ou pelo e-mail contato@agenciapollo.com.br. Resposta em até 24h úteis.',
+      'Fale com um especialista da pollo.ag pelo WhatsApp (86) 9 9484-9285 ou pelo e-mail atendimento@agenciapollo.com.br. Av. Homero Castelo Branco, 1956, Teresina – PI.',
   },
   '/conteudos': {
     title: 'Blog de Tráfego Pago, CRM e IA | pollo.ag',
@@ -115,6 +121,8 @@ export const ORGANIZATION_SCHEMA = {
   email: SITE.email,
   address: {
     '@type': 'PostalAddress',
+    streetAddress: SITE.street,
+    postOfficeBoxNumber: SITE.poBox,
     addressLocality: SITE.city,
     addressRegion: SITE.region,
     addressCountry: 'BR',

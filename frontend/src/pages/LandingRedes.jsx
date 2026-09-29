@@ -6,16 +6,17 @@ import {
   CheckCircle, ArrowRight, Star, MessageCircle,
   Target, Calendar, BarChart2, Instagram
 } from 'lucide-react';
+import { CTA_URL } from '@/seo/config';
 
 /* ─── Links WhatsApp ─── */
-const WA_HERO    = 'https://wa.me/5586994849285?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20gest%C3%A3o%20de%20redes%20sociais';
-const WA_GESTAO  = 'https://wa.me/5586994849285?text=Ol%C3%A1!%20Tenho%20interesse%20na%20Gest%C3%A3o%20Estrat%C3%A9gica%20Completa';
-const WA_LINHA   = 'https://wa.me/5586994849285?text=Ol%C3%A1!%20Tenho%20interesse%20na%20Cria%C3%A7%C3%A3o%20de%20Linha%20Editorial';
-const WA_CAPTAC  = 'https://wa.me/5586994849285?text=Ol%C3%A1!%20Tenho%20interesse%20na%20Capta%C3%A7%C3%A3o%20de%20Conte%C3%BAdo';
-const WA_POSTS   = 'https://wa.me/5586994849285?text=Ol%C3%A1!%20Tenho%20interesse%20em%20Posts%20Avulsos';
-const WA_MIDIA   = 'https://wa.me/5586994849285?text=Ol%C3%A1!%20Tenho%20interesse%20na%20Confec%C3%A7%C3%A3o%20de%20M%C3%ADdia%20Kit';
-const WA_ANALISE = 'https://wa.me/5586994849285?text=Ol%C3%A1!%20Tenho%20interesse%20na%20An%C3%A1lise%20Estrat%C3%A9gica%20de%20Perfil';
-const WA_FINAL   = 'https://wa.me/5586994849285?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Pollo';
+const WA_HERO    = CTA_URL;
+const WA_GESTAO  = CTA_URL;
+const WA_LINHA   = CTA_URL;
+const WA_CAPTAC  = CTA_URL;
+const WA_POSTS   = CTA_URL;
+const WA_MIDIA   = CTA_URL;
+const WA_ANALISE = CTA_URL;
+const WA_FINAL   = CTA_URL;
 const WA_GERAL   = WA_HERO;
 
 const GradientText = ({ children, className = '' }) => (

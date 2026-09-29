@@ -5,6 +5,7 @@ import {
   Calendar, BarChart2, Shield, Cpu, Layers, ArrowRight, CheckCircle,
   Activity, GitBranch, Bot, Filter, Star, ChevronRight
 } from 'lucide-react';
+import { CTA_URL } from '@/seo/config';
 
 /* ─── DADOS ─── */
 
@@ -138,16 +139,15 @@ function HeroSection() {
               Implementamos uma estrutura completa para captar, qualificar, pontuar, distribuir e acompanhar leads em tempo real.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-10">
-              <a href="#oferta"
+              <a href={CTA_URL} target="_blank" rel="noopener noreferrer"
                 data-testid="hero-cta-primary-wa"
                 className="inline-flex items-center justify-center gap-2 bg-brand-cta text-white font-semibold px-8 py-4 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.35)] text-base">
                 Quero estruturar minha operação <ArrowRight size={18} />
               </a>
-              <Link to="/diagnostico"
-                data-testid="hero-cta-secondary-wa"
+              <a href={CTA_URL} target="_blank" rel="noopener noreferrer" data-testid="hero-cta-secondary-wa"
                 className="inline-flex items-center justify-center gap-2 border border-[#3A231D] text-brand-muted hover:bg-[#3A231D]/30 hover:text-brand-text font-medium px-8 py-4 rounded-full transition-all duration-300 text-base">
                 Falar com especialista
-              </Link>
+              </a>
             </div>
           </SectionReveal>
         </div>
@@ -256,7 +256,7 @@ function SolutionSection() {
             <p className="text-brand-muted text-base leading-relaxed">
               Mais do que responder mensagens, nossa solução organiza toda a jornada do lead nos canais mais importantes do seu negócio.
             </p>
-            <a href="#oferta" className="mt-8 inline-flex items-center gap-2 bg-brand-cta text-white font-semibold px-8 py-4 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_25px_rgba(202,110,35,0.3)]">
+            <a href={CTA_URL} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex items-center gap-2 bg-brand-cta text-white font-semibold px-8 py-4 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_25px_rgba(202,110,35,0.3)]">
               Quero estruturar minha operação <ArrowRight size={18} />
             </a>
           </SectionReveal>
@@ -502,14 +502,13 @@ function OfferSection() {
                     </li>
                   ))}
                 </ul>
-                <Link to="/diagnostico"
-                  className={`w-full text-center font-semibold py-3.5 rounded-full hover:brightness-125 transition-all duration-300 text-sm ${
+                <a href={CTA_URL} target="_blank" rel="noopener noreferrer" className={`w-full text-center font-semibold py-3.5 rounded-full hover:brightness-125 transition-all duration-300 text-sm ${
                     offer.highlight
                       ? 'bg-brand-cta text-white shadow-[0_0_20px_rgba(202,110,35,0.3)]'
                       : 'border border-[#3A231D] text-brand-muted hover:text-brand-text hover:bg-[#3A231D]/30'
                   }`}>
                   {offer.cta}
-                </Link>
+                </a>
               </div>
             </SectionReveal>
           ))}
@@ -536,11 +535,10 @@ function FinalCTASection() {
             Vamos estruturar sua operação de atendimento, qualificação e receita com IA de forma segura, integrada e orientada à conversão.
           </p>
           <div className="mt-10">
-            <Link to="/diagnostico"
-              data-testid="final-cta-wa"
+            <a href={CTA_URL} target="_blank" rel="noopener noreferrer" data-testid="final-cta-wa"
               className="inline-flex items-center gap-2 bg-brand-cta text-white font-semibold px-10 py-5 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_40px_rgba(202,110,35,0.4)] text-base">
               Agendar diagnóstico estratégico <ArrowRight size={18} />
-            </Link>
+            </a>
             <p className="text-brand-subtle text-xs mt-4">
               Entenda onde sua operação perde leads e como transformar atendimento em crescimento com previsibilidade.
             </p>

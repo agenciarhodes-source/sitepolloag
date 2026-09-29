@@ -4,6 +4,7 @@ import { CheckCircle, ArrowRight } from 'lucide-react';
 import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
 } from '@/components/ui/accordion';
+import { CTA_URL } from '@/seo/config';
 
 const SYMPTOMS = [
   'CAC subindo sem explicação clara',
@@ -121,11 +122,10 @@ export default function LandingPerformance() {
           <SectionReveal>
             <h2 className="font-sora text-2xl md:text-3xl font-semibold text-brand-text mb-4">Pedir auditoria de performance</h2>
             <p className="text-brand-subtle text-sm mb-8">Resposta em até 24h úteis.</p>
-            <Link to="/diagnostico"
-              data-testid="cta-performance-form"
+            <a href={CTA_URL} target="_blank" rel="noopener noreferrer" data-testid="cta-performance-form"
               className="inline-flex items-center justify-center gap-2 bg-brand-cta text-white font-semibold px-10 py-5 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.35)] text-base">
               Pedir auditoria de performance <ArrowRight size={18} />
-            </Link>
+            </a>
             <p className="text-brand-subtle text-xs mt-4">Sem spam. Seus dados ficam protegidos (LGPD).</p>
           </SectionReveal>
         </div>

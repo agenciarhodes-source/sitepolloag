@@ -4,6 +4,7 @@ import { CheckCircle, ArrowRight } from 'lucide-react';
 import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
 } from '@/components/ui/accordion';
+import { CTA_URL } from '@/seo/config';
 
 const WHAT_WE_EVALUATE = [
   'Tracking e eventos — o que está sendo medido (e o que não está)',
@@ -57,11 +58,10 @@ export default function Diagnostico() {
             <div className="bg-brand-surface1 border border-[#3A231D] rounded-2xl p-8 flex flex-col items-center text-center">
               <h2 className="font-sora text-xl font-semibold text-brand-text mb-4">Agendar diagnóstico estratégico</h2>
               <p className="text-brand-subtle text-sm mb-8">Resposta em até 24h úteis.</p>
-              <Link to="/contato"
-                data-testid="cta-diagnostico-form"
+              <a href={CTA_URL} target="_blank" rel="noopener noreferrer" data-testid="cta-diagnostico-form"
                 className="inline-flex items-center justify-center gap-2 bg-brand-cta text-white font-semibold px-10 py-5 rounded-full hover:brightness-125 transition-all duration-300 shadow-[0_0_30px_rgba(202,110,35,0.35)] text-base w-full">
                 Quero meu diagnóstico <ArrowRight size={18} />
-              </Link>
+              </a>
               <p className="text-brand-subtle text-xs mt-4">Sem spam. Seus dados ficam protegidos (LGPD).</p>
             </div>
           </div>
