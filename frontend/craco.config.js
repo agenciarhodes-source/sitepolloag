@@ -51,6 +51,12 @@ let webpackConfig = {
         ],
       };
 
+      // Prévia em arquivo único: tudo num só pacote de JavaScript (sem chunks separados)
+      if (process.env.REACT_APP_PREVIEW === "true") {
+        const webpack = require("webpack");
+        webpackConfig.plugins.push(new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 1 }));
+      }
+
       // Add health check plugin to webpack if enabled
       if (config.enableHealthCheck && healthPluginInstance) {
         webpackConfig.plugins.push(healthPluginInstance);

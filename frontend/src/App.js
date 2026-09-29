@@ -1,6 +1,10 @@
 import "@/App.css";
 import { useEffect, lazy, Suspense } from "react";
-import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { BrowserRouter, MemoryRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
+
+// Build de prévia (REACT_APP_PREVIEW=true): navegação em memória, para funcionar como um único arquivo HTML.
+export const PREVIEW = process.env.REACT_APP_PREVIEW === "true";
+const Router = PREVIEW ? MemoryRouter : BrowserRouter;
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Seo from "@/seo/Seo";
@@ -53,6 +57,7 @@ const ROUTE_PAGES = {
 };
 
 export function preloadRoute(pathname) {
+  if (PREVIEW) pathname = "/";
   const path = pathname.length > 1 ? pathname.replace(/\/+$/, "") : "/";
   if (REDIRECTS[path]) return Promise.resolve();
   const page = ROUTE_PAGES[path] || (path.startsWith("/conteudos/") ? BlogPost : NotFound);
@@ -64,6 +69,18 @@ function ScrollToTop() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
   }, [pathname]);
+  // Na prévia, links âncora (#pacotes, #servicos…) rolam até a seção dentro da própria página.
+  useEffect(() => {
+    if (!PREVIEW) return undefined;
+    const onClick = (e) => {
+      const a = e.target.closest && e.target.closest('a[href^="#"]');
+      if (!a || a.getAttribute("href").startsWith("#/")) return;
+      const el = document.getElementById(a.getAttribute("href").slice(1));
+      if (el) { e.preventDefault(); el.scrollIntoView({ behavior: "smooth" }); }
+    };
+    document.addEventListener("click", onClick);
+    return () => document.removeEventListener("click", onClick);
+  }, []);
   return null;
 }
 
@@ -101,7 +118,7 @@ function Layout({ children }) {
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <Router>
         <ScrollToTop />
         <Layout>
           <Suspense fallback={<div className="min-h-screen" />}>
@@ -127,7 +144,7 @@ function App() {
             </Routes>
           </Suspense>
         </Layout>
-      </BrowserRouter>
+      </Router>
     </div>
   );
 }
