@@ -11,7 +11,7 @@ export default function SolucaoTemplate({ title, tag, description, whatIs, benef
         )}
         <div className="absolute inset-0 bg-gradient-to-b from-[#160907]/60 to-[#160907]" />
         <div className="relative max-w-7xl mx-auto px-6 md:px-12">
-          <SectionReveal instant className="max-w-3xl">
+          <SectionReveal className="max-w-3xl">
             <h1 className="font-sora text-4xl md:text-5xl lg:text-6xl font-bold text-brand-text leading-tight"
               dangerouslySetInnerHTML={{ __html: title }} />
             <p className="text-brand-muted text-lg mt-6 leading-relaxed">{description}</p>

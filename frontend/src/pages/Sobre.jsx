@@ -25,7 +25,7 @@ export default function Sobre() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#160907]/60 to-[#160907]" />
         <div className="relative max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <SectionReveal instant>
+            <SectionReveal>
               <h1 className="font-sora text-4xl md:text-5xl lg:text-6xl font-bold text-brand-text leading-tight">
                 IA-first com{' '}
                 <span className="gradient-text">humano no centro.</span>

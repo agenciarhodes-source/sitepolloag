@@ -86,7 +86,7 @@ function Hero() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-32 pt-40">
         <motion.div
-          initial={false}
+          initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="max-w-3xl"

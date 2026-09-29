@@ -52,7 +52,7 @@ export default function Metodo() {
       <section className="py-28 relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px gradient-bg opacity-60" />
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <SectionReveal instant className="max-w-3xl">
+          <SectionReveal className="max-w-3xl">
             <h1 className="font-sora text-4xl md:text-5xl lg:text-6xl font-bold text-brand-text leading-tight">
               Método pollo.ag:{' '}
               <span className="gradient-text">diagnóstico, arquitetura e rotina.</span>

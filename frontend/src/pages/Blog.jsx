@@ -40,7 +40,7 @@ export default function Blog() {
     <div data-testid="blog-page" className="pt-20">
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <SectionReveal instant className="mb-12">
+          <SectionReveal className="mb-12">
             <h1 className="font-sora text-4xl md:text-5xl font-bold text-brand-text">
               Insights práticos sobre{' '}
               <span className="gradient-text">IA, growth e CRM.</span>

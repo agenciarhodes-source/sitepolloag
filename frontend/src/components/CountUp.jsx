@@ -14,7 +14,7 @@ function format(n, decimals, separator, decimal) {
 
 export default function CountUp({
   start = 0, end, duration = 2, decimals = 0, prefix = '', suffix = '',
-  separator = '', decimal = ',', className,
+  separator = '', decimal = '.', className,
 }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-40px' });

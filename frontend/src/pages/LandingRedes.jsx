@@ -215,7 +215,7 @@ function HeroSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
         {/* Esquerda */}
-        <SectionReveal instant>
+        <SectionReveal>
           <h1 className="font-sora font-bold text-4xl md:text-5xl lg:text-6xl leading-tight" style={{ color: '#FAF7F4' }}>
             Gestão de redes sociais que gera{' '}
             <GradientText>resultado real.</GradientText>

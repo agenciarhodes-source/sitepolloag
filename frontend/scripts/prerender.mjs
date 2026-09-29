@@ -70,8 +70,8 @@ for (const route of [...PRERENDER_ROUTES, '/404']) {
       document.head.prepend(l);
     }
     document.querySelectorAll('script[type="application/ld+json"]:not([data-seo])').forEach((s) => s.remove());
-    // Elementos ainda escondidos pela animação de entrada ficam visíveis no HTML estático.
-    document.querySelectorAll('main [style*="opacity: 0"]').forEach((el) => { el.style.opacity = ''; el.style.transform = ''; });
+    // As animações de entrada ficam como no site original: o texto está no HTML (os buscadores leem),
+    // e o React refaz a animação ao carregar.
     return '<!doctype html>\n' + document.documentElement.outerHTML;
   }, FONT_PRELOADS);
   const title = await page.title();

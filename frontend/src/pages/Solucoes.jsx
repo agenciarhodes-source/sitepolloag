@@ -45,7 +45,7 @@ export default function Solucoes() {
           style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1759956445608-32eef0f19208?crop=entropy&cs=srgb&fm=jpg&q=85)' }} />
         <div className="absolute inset-0 bg-gradient-to-b from-[#160907]/60 to-[#160907]" />
         <div className="relative max-w-7xl mx-auto px-6 md:px-12 text-center">
-          <SectionReveal instant>
+          <SectionReveal>
             <h1 className="font-sora text-4xl md:text-5xl lg:text-6xl font-bold text-brand-text leading-tight">
               Um ecossistema para transformar{' '}
               <span className="gradient-text">crescimento em sistema.</span>
